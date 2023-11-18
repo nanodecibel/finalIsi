@@ -1,8 +1,36 @@
-h1{
-  text-align: center;
+div{
+  margin: 4px;
+}
+nav-link{
+  text-decoration: none;
 }
 
-.form{
-  text-align: center;
+h1{
+  font-size: 24pt;
+  margin: 5px;
 }
+
+form {
+  max-width: 500px;
+  margin: 5px 0;
+
+}
+
+label{
+  margin-bottom: 3px;
+  padding: 5px;
+  text-justify: auto;
+}
+
+input.email {
+  margin-left: 11px;
+}
+
+button{
+  margin-left: 10px;
+}
+
+
+
+
 

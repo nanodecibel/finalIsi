@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { EstudianteService } from '../service/estudiante.service';
 
 
 @Component({
@@ -16,10 +16,10 @@ export class EstudiantesComponent {
     telefono: ''
   };
 
-  constructor(private http: HttpClient) {}
+  constructor(private estudianteService: EstudianteService) {}
 
-  onSubmit() {
-    this.http.post('/api/students', this.estudiante).subscribe(() => {
+  onSubmit(estudianteData: any) {
+    this.estudianteService.agregarEstudiante(estudianteData).subscribe(() => {
       alert('Registro exitoso!');
     });
   }
