@@ -1,21 +1,8 @@
-body {
-  font: 1.3rem sans-serif;
-  padding: 0.5em;
-  margin: 0;
-  background-color: azure;
+h1{
+  text-align: center;
 }
 
-nav {
-  text-decoration: none;
-}
-
-title{
-  font-size: large;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
-}
-
-input {
-  box-sizing: border-box;
+.form{
+  text-align: center;
 }
 
