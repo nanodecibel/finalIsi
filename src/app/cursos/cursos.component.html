@@ -1,19 +1,133 @@
 <p>cursos works!</p>
+<link rel="stylesheet" href="/finalIsi/src/app/cursos/cursos.component.css">
+
 <div id="CreateCursos">
+
+    <h2>Crear nueva Materia</h2>
+
+    <form action="/enviar" method="post">
+
+        <label for="nombreMateria">Nombre de la Materia:</label>
+        <input type="text" id="nombreMateria" name="nombreMateria" required>
+        <br>
+
+        <label for="codigoMateria">Código de la Materia:</label>
+        <input type="text" id="codigoMateria" name="codigoMateria" required>
+        <br>
+
+        <label for="numEstudiantes">Número de Estudiantes:</label>
+        <input type="number" id="numEstudiantes" name="numEstudiantes" required>
+        <br>
+
+        <label for="aulaAsignada">Aula Asignada:</label>
+        <input type="text" id="aulaAsignada" name="aulaAsignada" required>
+        <br>
+
+        <label for="docentes">Docentes:</label>
+        <select id="docentes" name="docentes" required>
+            <option value="Janio Allauca">Janio Allauca</option>
+            <option value="Valeria Fernandez">Valeria Fernandez</option>
+            <option value="Chistopher Pezantes">Chistopher Pezantes</option>
+            <option value="Carlos Hidalgo">Carlos Hidalgo</option>
+        </select>
+        <br>
+
+        <!-- Botón de envío del formulario -->
+        <button type="submit">Enviar</button>
+    </form>
+
 
 </div>
 <div id="Asignacion">
-    <select>
-        <option value="curso1">Curso 1</option>
-        <option value="curso2">Curso 2</option>
-        <option value="curso3">Curso 3</option>
-        <option value="curso4">Curso 4</option>
-    </select>
-    <div class="listados">
-        <table>
-            <thead>
-                
-            </thead>
-        </table>
-    </div>
+  <select class="options">
+    <option value="curso1">Curso 1</option>
+    <option value="curso2">Curso 2</option>
+    <option value="curso3">Curso 3</option>
+    <option value="curso4">Curso 4</option>
+  </select>
+  <div class="row">
+  <div class="col listados" id="listadoGeneral">
+    <h2>Estudiantes por Asignar</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Código Único</th>
+          <th>Nombres</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td>001</td>
+        <td>Stefanny</td>
+        <td>
+            <button>Agregar</button>
+        </td>
+       </tr>
+       <tr>
+        <td>002</td>
+        <td>Dayanna</td>
+        <td>
+            <button>Agregar</button>
+        </td>
+       </tr>
+       <tr>
+        <td>003</td>
+        <td>Kevin</td>
+        <td>
+            <button>Agregar</button>
+        </td>
+       </tr>
+       <tr>
+        <td>004</td>
+        <td>Fanny</td>
+        <td>
+            <button>Agregar</button>
+        </td>
+       </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col listados" id="listadoCurso">
+   <h2>Estudiantes Asignados</h2>
+    <table>
+        <thead>
+            <tr>
+              <th>Código Único</th>
+              <th>Nombres</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <td>001</td>
+                <td>Stefanny</td>
+                <td>
+                    <button>Quitar</button>
+                </td>
+               </tr>
+               <tr>
+                <td>002</td>
+                <td>Dayanna</td>
+                <td>
+                    <button>Quitar</button>
+                </td>
+               </tr>
+               <tr>
+                <td>003</td>
+                <td>Kevin</td>
+                <td>
+                    <button>Quitar</button>
+                </td>
+               </tr>
+               <tr>
+                <td>004</td>
+                <td>Fanny</td>
+                <td>
+                    <button>Quitar</button>
+                </td>
+               </tr>
+          </tbody>
+    </table>
+  </div>
 </div>
