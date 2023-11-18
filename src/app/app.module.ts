@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { EstudiantesComponent } from './estudiantes/estudiantes.component';
 import { FormsModule } from '@angular/forms';
 import { CursosComponent } from './cursos/cursos.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { CursosComponent } from './cursos/cursos.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
