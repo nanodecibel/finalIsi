@@ -1,30 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Estudiantes</title>
+  <link rel="stylesheet" href="estudiantes.component.css">
 </head>
 <body>
   <div>
     <div>
-    <nav>
+    <nav class="menu">
       <ul>
           <li><a href="#">Inicio</a></li>
       </ul>
   </nav>
 </div>
-    <h1>Registro de Estudiantes</h1>
+    <h1 class="title">Registro de Estudiantes</h1>
 
-    <form>
-      <label for="name">Nombre:</label>
-      <input type="text" id="name" name="name" [(ngModel)]="name"><br><br>
-      <label for="email">Correo electrónico:</label>
-      <input type="email" id="email" name="email" [(ngModel)]="email"><br><br>
-      <label for="phone">Número de teléfono:</label>
-      <input type="tel" id="phone" name="phone" [(ngModel)]="phone"><br><br>
-      <input type="submit" value="Enviar">
+    <form (ngSubmit)="onSubmit()" #registroEstudianteForm="ngForm">
+      <div>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="firstName" name="firstName" [(ngModel)]="estudiante.nombre" required>
+      </div>
+      <div>
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="lastName" name="lastName" [(ngModel)]="estudiante.apellido" required>
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" [(ngModel)]="estudiante.email" required>
+      </div>
+      <div>
+        <label for="telefono">Teléfono:</label>
+        <input type="number" id="phoneNumber" name="phoneNumber" [(ngModel)]="estudiante.telefono" required>
+      </div>
+      <button type="submit" [disabled]="!registroEstudianteForm.form.valid">Guardar</button>
     </form>
+
 
 </div>
 
