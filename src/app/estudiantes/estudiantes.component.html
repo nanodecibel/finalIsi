@@ -12,84 +12,79 @@
   <br>
     <h1 class="title">Registro de Estudiantes</h1>
 <div class="card-body">
-    <form class="form" (ngSubmit)="onSubmit(estudiante)">
+    <form class="form" >
       <div>
         <label for="nombre" >Nombre:</label>
-        <input type="text" id="nombre" [(ngModel)]="estudiante.nombre" required>
+        <input type="text" id="nombre" required>
       </div>
       <div>
         <label for="apellido" >Apellido:</label>
-        <input type="text" id="apellido" [(ngModel)]="estudiante.apellido" required>
+        <input type="text" id="apellido"  required>
       </div>
       <div>
         <label for="email" >Correo: </label>
-        <input class="email "type="email" id="email" [(ngModel)]="estudiante.email" required>
+        <input class="email "type="email" id="email" required>
       </div>
       <div>
         <label for="telefono" >Teléfono:</label>
-        <input type="number" id="telefono" [(ngModel)]="estudiante.telefono" required>
+        <input type="number" id="telefono" required>
       </div>
       <button type="submit" class="btn btn-info">Registrar</button>
     </form>
   </div>
-  <br>
+<br>
   <br>
   <div class="row">
     <div>
       <h2>Listado de Estudiantes</h2>
+
       <table class="table table-responsive-sm table-striped table-bordered">
         <thead class="table-dark">
           <tr>
-            <th>NOMBRE</th>
-            <th>APELLIDO</th>
-            <th>CORREO</th>
-            <th>TELEFONO</th>
-            <th></th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Correo electrónico</th>
+            <th>Teléfono</th>
+            <th>Acciones</th>
           </tr>
         </thead>
-        <tbody class="table-group-divider">
-         <tr>
-          <td>Alejandra</td>
-          <td>López</td>
-          <td>alelopez@hotmail.com</td>
-          <td>0982782891</td>
-          <td>
-              <button class="btn btn-outline-success">Editar</button>
-              <button class="btn btn-outline-danger">Eliminar</button>
-          </td>
-         </tr>
-         <tr>
-          <td>Mario</td>
-          <td>Santillan</td>
-          <td>msantillan@hotmail.com</td>
-          <td>0998727190</td>
-          <td>
-            <button class="btn btn-outline-success">Editar</button>
-            <button class="btn btn-outline-danger">Eliminar</button>
-          </td>
-         </tr>
-         <tr>
-          <td>Dario</td>
-          <td>Escobar</td>
-          <td>descobar@gmail.com</td>
-          <td>0984274892</td>
-          <td>
-            <button class="btn btn-outline-success">Editar</button>
-            <button class="btn btn-outline-danger">Eliminar</button>
-          </td>
-         </tr>
-         <tr>
-          <td>José</td>
-          <td>Polo</td>
-          <td>jpolo@hotmail.com</td>
-          <td>0982374185</td>
-          <td>
-            <button class="btn btn-outline-success">Editar</button>
-            <button class="btn btn-outline-danger">Eliminar</button>
-          </td>
-         </tr>
+        <tbody>
+          <tr *ngFor="let estudiante of estudiantes">
+            <td>{{ estudiante.nombre }}</td>
+            <td>{{ estudiante.apellido }}</td>
+            <td>{{ estudiante.email }}</td>
+            <td>{{ estudiante.telefono }}</td>
+            <td>
+              <button class="btn btn-outline-success" (click)="editarEstudiante(estudiante)">Editar</button>
+              <button class="btn btn-outline-danger" (click)="eliminarEstudiante(estudiante)">Eliminar</button>
+            </td>
+          </tr>
         </tbody>
       </table>
+
+      <button class="btn btn-outline-info" (click)="agregarEstudiante()">Agregar estudiante</button>
+
+      <div *ngIf="modoEdicion">
+        <h2>Editar estudiante</h2>
+        <form (submit)="guardarEstudiante()">
+          <label>Nombre:</label>
+          <input type="text" [(ngModel)]="estudianteSeleccionado.nombre" name="nombre" required>
+
+          <label>Apellido:</label>
+          <input type="text" [(ngModel)]="estudianteSeleccionado.apellido" name="apellido" required>
+
+          <label>Correo electrónico:</label>
+          <input type="email" [(ngModel)]="estudianteSeleccionado.email" name="email" required>
+
+          <label>Teléfono:</label>
+          <input type="tel" [(ngModel)]="estudianteSeleccionado.telefono" name="telefono" required>
+
+          <button class="btn btn-success" type="submit">Guardar</button>
+          <button class="btn btn-primary" type="button" (click)="modoEdicion = false">Cancelar</button>
+        </form>
+      </div>
+
+
     </div>
   </div>
 
