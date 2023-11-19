@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { EstudianteService } from '../service/estudiante.service';
 
 
 @Component({
@@ -9,18 +8,40 @@ import { EstudianteService } from '../service/estudiante.service';
 })
 
 export class EstudiantesComponent {
-  estudiante = {
-    nombre: '',
-    apellido: '',
-    email: '',
-    telefono: ''
-  };
+  estudiantes = [
+    { nombre: 'Juan', apellido: 'Pérez', email: 'juan.perez@hotmail.com', telefono: '0982737190' },
+    { nombre: 'María', apellido: 'García', email: 'maria.garcia@gmail.com', telefono: '0999238183' },
+    { nombre: 'Pedro', apellido: 'Rodríguez', email: 'pedro.rodriguez@hotmail.com', telefono: '0984124289' }
+  ];
 
-  constructor(private estudianteService: EstudianteService) {}
+  estudianteSeleccionado: any = {};
+  modoEdicion: boolean = false;
 
-  onSubmit(estudianteData: any) {
-    this.estudianteService.agregarEstudiante(estudianteData).subscribe(() => {
-      alert('Registro exitoso!');
-    });
+  agregarEstudiante(): void {
+    this.estudianteSeleccionado = {};
+    this.modoEdicion = false;
+  }
+
+  editarEstudiante(estudiante: any): void {
+    this.estudianteSeleccionado = { ...estudiante };
+    this.modoEdicion = true;
+  }
+
+  guardarEstudiante(): void {
+    if (this.modoEdicion) {
+      const index = this.estudiantes.findIndex(e => e.nombre === this.estudianteSeleccionado.nombre);
+      this.estudiantes[index] = { ...this.estudianteSeleccionado };
+    } else {
+      const nombre = this.estudiantes.length + 1;
+      this.estudiantes.push({ nombre, ...this.estudianteSeleccionado });
+    }
+
+    this.estudianteSeleccionado = {};
+    this.modoEdicion = false;
+  }
+
+  eliminarEstudiante(estudiante: any): void {
+    const index = this.estudiantes.findIndex(e => e.nombre === estudiante.nombre);
+    this.estudiantes.splice(index, 1);
   }
 }
