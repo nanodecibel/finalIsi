@@ -27,6 +27,13 @@
       "apellido": "Enriquez",
       "email": "denriquez@gmail.com",
       "telefono": "0982737172"
+    },
+    {
+      "id": 5,
+      "nombre": "Sofia",
+      "apellido": "Vargas",
+      "email": "sofi34v@gmail.com",
+      "telefono": "0999827372"
     }
   ]
 }

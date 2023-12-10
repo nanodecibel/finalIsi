@@ -14,6 +14,13 @@ export class EstudiantesComponent {
 
   dataEstudiante: any = {};
 
+  //MÉTODO GET  
+  ngOnInit(){
+    this.servicio.getEstudiantes().subscribe(estudiantes => {
+      this.dataEstudiante= estudiantes
+    })
+  }
+
   //MÉTODO POST
   guardarEstudiante(id: string, nombre:string, apellido:string, email:string, telefono:string){
     const ide:number=parseInt(id)

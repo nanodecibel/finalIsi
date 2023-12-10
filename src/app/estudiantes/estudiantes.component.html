@@ -13,12 +13,12 @@
     <h1 class="title">Registro de Estudiantes</h1>
 <div class="card-body">
     <form class="form" >
-      <div class="mb-3 mt-3">
+      <div>
         <label for="id" class="form-label">ID:</label>
         <input type="number" class="form-control" id="id" required #id>
       </div>
-      <div class="mb-3 mt-3">
-        <label for="nombre" class="form-label" >Nombre:</label>
+      <div>
+        <label for="nombre" class="form-label">Nombre:</label>
         <input type="text" class="form-control" id="nombre" required #nombre>
       </div>
       <div>
@@ -26,7 +26,7 @@
         <input type="text" class="form-control" id="apellido"  required #apellido>
       </div>
       <div>
-        <label for="email" class="form-label" >Correo: </label>
+        <label for="email" class="form-label">Correo: </label>
         <input class="email" class="form-control" type="email" id="email" required #email>
       </div>
       <div>
@@ -41,7 +41,6 @@
   <div class="row">
     <div>
       <h2>Listado de Estudiantes</h2>
-
       <table class="table table-responsive-sm table-striped table-bordered">
         <thead class="table-dark">
           <tr>
@@ -88,10 +87,7 @@
           <button class="btn btn-primary" type="button" (click)="actualizarEstudiante(id.value, nombre.value, apellido.value, email.value, telefono.value)">Actualizar</button>
         </form>
       </div>
-
-
     </div>
   </div>
-
 </body>
 </html>
