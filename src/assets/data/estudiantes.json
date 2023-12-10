@@ -1,0 +1,25 @@
+{
+  "estudiantes": [
+    {
+      "id": 1,
+      "nombre": "Pedro",
+      "apellido": "Álava",
+      "email": "pedro.a@hotmail.com",
+      "telefono": "Masculino"
+    },
+    {
+      "id": 2,
+      "nombre": "Andrea",
+      "apellido": "Perez",
+      "email": "a.perez@hotmail.com",
+      "telefono": "Femenino"
+    },
+    {
+      "id": 3,
+      "nombre": "José",
+      "apellido": "Vela",
+      "email": "jose.vela@hotmail.com",
+      "telefono": "Masculino"
+    }
+  ]
+}

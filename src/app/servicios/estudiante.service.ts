@@ -10,7 +10,7 @@ export class EstudianteService {
 
   constructor(private http: HttpClient) { }
 
-  private API_ESTUDIANTES = "http://localhost:3000/administrativo"
+  private API_ESTUDIANTES = "http://localhost:3000/estudiantes"
 
   //METODO GET
   getEstudiantes(): Observable <any>{

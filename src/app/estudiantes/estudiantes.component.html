@@ -14,22 +14,26 @@
 <div class="card-body">
     <form class="form" >
       <div>
+        <label for="id" >ID:</label>
+        <input type="number" id="id" required #id>
+      </div>
+      <div>
         <label for="nombre" >Nombre:</label>
-        <input type="text" id="nombre" required>
+        <input type="text" id="nombre" required #nombre>
       </div>
       <div>
         <label for="apellido" >Apellido:</label>
-        <input type="text" id="apellido"  required>
+        <input type="text" id="apellido"  required #apellido>
       </div>
       <div>
         <label for="email" >Correo: </label>
-        <input class="email "type="email" id="email" required>
+        <input class="email "type="email" id="email" required #email>
       </div>
       <div>
         <label for="telefono" >Teléfono:</label>
-        <input type="number" id="telefono" required>
+        <input type="number" id="telefono" required #telefono>
       </div>
-      <button type="submit" class="btn btn-info" (click)="guardarEstudiante()">Registrar</button>
+      <button type="submit" class="btn btn-info" (click)="guardarEstudiante(id.value, nombre.value, apellido.value, email.value, telefono.value)">Registrar</button>
     </form>
   </div>
 <br>
@@ -50,39 +54,37 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let estudiante of estudiantes">
-            <td>{{ estudiante.id }}</td>
-            <td>{{ estudiante.nombre }}</td>
-            <td>{{ estudiante.apellido }}</td>
-            <td>{{ estudiante.email }}</td>
-            <td>{{ estudiante.telefono }}</td>
+          <tr *ngFor="let item of dataEstudiante">
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.apellido }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.telefono }}</td>
             <td>
-              <button class="btn btn-outline-success" (click)="editarEstudiante(estudiante)">Editar</button>
-              <button class="btn btn-outline-danger" (click)="eliminarEstudiante(estudiante)">Eliminar</button>
+              <button class="btn btn-outline-success" (click)="actualizarEstudiante(id.value, nombre.value, apellido.value, email.value, telefono.value)">Editar</button>
+              <button class="btn btn-outline-danger" (click)="eliminarEstudiante(id.value)">Eliminar</button>
             </td>
           </tr>
         </tbody>
       </table>
 
-      <button class="btn btn-outline-info" (click)="agregarEstudiante()">Agregar estudiante</button>
+      <button class="btn btn-outline-info" (click)="guardarEstudiante(id.value, nombre.value, apellido.value, email.value, telefono.value)">Agregar estudiante</button>
 
-      <div *ngIf="modoEdicion">
+      <div>
         <h2>Editar estudiante</h2>
-        <form (submit)="guardarEstudiante()">
+        <form (submit)="guardarEstudiante(id.value, nombre.value, apellido.value, email.value, telefono.value)">
           <label>Nombre:</label>
-          <input type="text" [(ngModel)]="estudianteSeleccionado.nombre" name="nombre" required>
+          <input type="text" [(ngModel)]="nombre.value" name="nombre" required>
 
           <label>Apellido:</label>
-          <input type="text" [(ngModel)]="estudianteSeleccionado.apellido" name="apellido" required>
+          <input type="text" [(ngModel)]="apellido.value" name="apellido" required>
 
           <label>Correo electrónico:</label>
-          <input type="email" [(ngModel)]="estudianteSeleccionado.email" name="email" required>
+          <input type="email" [(ngModel)]="email.value" name="email" required>
 
           <label>Teléfono:</label>
-          <input type="tel" [(ngModel)]="estudianteSeleccionado.telefono" name="telefono" required>
+          <input type="tel" [(ngModel)]="telefono.value" name="telefono" required>
 
-          <button class="btn btn-success" type="submit">Guardar</button>
-          <button class="btn btn-primary" type="button" (click)="modoEdicion = false">Cancelar</button>
+          <button class="btn btn-primary" type="button" (click)="actualizarEstudiante(id.value, nombre.value, apellido.value, email.value, telefono.value)">Actualizar</button>
         </form>
       </div>
 
