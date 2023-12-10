@@ -14,7 +14,10 @@ export class EstudiantesComponent {
 
   dataEstudiante: any = {};
 
-  //MÉTODO GET  
+  itemSeleccionado: any = {};
+  modoEdicion: boolean = false;
+
+  //MÉTODO GET
   ngOnInit(){
     this.servicio.getEstudiantes().subscribe(estudiantes => {
       this.dataEstudiante= estudiantes
@@ -32,6 +35,12 @@ export class EstudiantesComponent {
       "telefono": telefono
     }
     this.servicio.postEstudiantes(temp).subscribe();
+    }
+
+    //METODO EDICION
+    editarEstudiante(dataEstudiante: any): void {
+      this.itemSeleccionado = {...dataEstudiante};
+      this.modoEdicion = true;
     }
 
 //MÉTODO PUT
