@@ -60,7 +60,7 @@
             <td>{{item.email}}</td>
             <td>{{item.telefono}}</td>
             <td>
-              <button class="btn btn-outline-success" (click)="actualizarEstudiante(id.value, nombre.value, apellido.value, email.value, telefono.value)">Editar</button>
+              <button class="btn btn-outline-success" (click)="editarEstudiante(dataEstudiante)">Editar</button>
               <button class="btn btn-outline-danger" (click)="eliminarEstudiante(id.value)">Eliminar</button>
             </td>
           </tr>
@@ -76,9 +76,9 @@
         <form>
           <div class="mb-3 mt-3">
             <label for="id" class="form-label">Ingrese el ID del estudiante a eliminar:</label>
-            <input type="number" class="form-control" id="id" #ide>
+            <input type="number" class="form-control" id="id" #id>
           </div>
-          <button type="submit" class="btn btn-danger" (click)="eliminarEstudiante(ide.value)">Eliminar</button>
+          <button type="submit" class="btn btn-danger" (click)="eliminarEstudiante(id.value)">Eliminar</button>
         </form>
       </div>
 
@@ -86,20 +86,25 @@
 
       <div *ngIf="modoEdicion">
         <h2>Editar estudiante</h2>
-        <form (submit)="guardarEstudiante(id.value, nombre.value, apellido.value, email.value, telefono.value)">
+        <form (submit)="guardar()">
+          <label>ID:</label>
+          <input type="text" [(ngModel)]="itemSeleccionado.id" name="id" required>
+
           <label>Nombre:</label>
-          <input type="text" [(ngModel)]="nombre.value" name="nombre" required>
+          <input type="text" [(ngModel)]="itemSeleccionado.nombre" name="nombre" required>
 
           <label>Apellido:</label>
-          <input type="text" [(ngModel)]="apellido.value" name="apellido" required>
+          <input type="text" [(ngModel)]="itemSeleccionado.apellido" name="apellido" required>
 
           <label>Correo electrónico:</label>
-          <input type="email" [(ngModel)]="email.value" name="email" required>
+          <input type="email" [(ngModel)]="itemSeleccionado.email" name="email" required>
 
           <label>Teléfono:</label>
-          <input type="tel" [(ngModel)]="telefono.value" name="telefono" required>
+          <input type="tel" [(ngModel)]="itemSeleccionado.telefono" name="telefono" required>
 
-          <button class="btn btn-primary" type="button" (click)="actualizarEstudiante(id.value, nombre.value, apellido.value, email.value, telefono.value)">Actualizar</button>
+          <button class="btn btn-success" type="submit">Guardar</button>
+          <button class="btn btn-primary" type="button" (click)="modoEdicion = false">Cancelar</button>
+
         </form>
       </div>
 
