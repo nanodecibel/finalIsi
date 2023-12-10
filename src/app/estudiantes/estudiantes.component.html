@@ -66,8 +66,23 @@
           </tr>
         </tbody>
       </table>
+    </div>
+  </div>
 
-      <button class="btn btn-outline-info" (click)="guardarEstudiante(id.value, nombre.value, apellido.value, email.value, telefono.value)">Agregar estudiante</button>
+      <br>
+
+      <div>
+        <h2>Eliminar estudiante</h2>
+        <form>
+          <div class="mb-3 mt-3">
+            <label for="id" class="form-label">Ingrese el ID del estudiante a eliminar:</label>
+            <input type="number" class="form-control" id="id" #ide>
+          </div>
+          <button type="submit" class="btn btn-danger" (click)="eliminarEstudiante(ide.value)">Eliminar</button>
+        </form>
+      </div>
+
+      <br>
 
       <div>
         <h2>Editar estudiante</h2>
@@ -87,7 +102,5 @@
           <button class="btn btn-primary" type="button" (click)="actualizarEstudiante(id.value, nombre.value, apellido.value, email.value, telefono.value)">Actualizar</button>
         </form>
       </div>
-    </div>
-  </div>
 </body>
 </html>
