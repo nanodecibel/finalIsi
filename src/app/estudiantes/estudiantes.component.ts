@@ -56,6 +56,20 @@ export class EstudiantesComponent {
     this.servicio.putEstudiantes(temp, ide).subscribe();
   }
 
+  guardar(): void {
+    if (this.modoEdicion) {
+      const index = this.dataEstudiante.findIndex((e: { nombre: any; }) => e.nombre === this.itemSeleccionado.nombre);
+      this.dataEstudiante[index] = { ...this.itemSeleccionado };
+    } else {
+      const id = this.dataEstudiante.length + 1;
+      this.dataEstudiante.push({ id, ...this.itemSeleccionado });
+    }
+
+    this.itemSeleccionado = {};
+    this.modoEdicion = false;
+  }
+
+
   //MÉTODO DELETE
   eliminarEstudiante(id:string){
     const ide: number= parseInt(id)
