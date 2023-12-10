@@ -20,6 +20,13 @@
       "apellido": "Vela",
       "email": "jose.vela@hotmail.com",
       "telefono": "Masculino"
+    },
+    {
+      "id": 4,
+      "nombre": "Daniel",
+      "apellido": "Enriquez",
+      "email": "denriquez@gmail.com",
+      "telefono": "0982737172"
     }
   ]
 }
