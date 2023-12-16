@@ -78,7 +78,7 @@ export class EstudiantesComponent {
     location.reload()
   }
 
-  //
+  //Submit (modo edicion)
   onSubmit():void{
     this.servicio.putEstudiantes(this.itemSeleccionado).subscribe(() => {
       this.servicio.getEstudiantes();
