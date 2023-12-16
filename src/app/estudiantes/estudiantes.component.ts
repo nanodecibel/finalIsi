@@ -17,6 +17,21 @@ export class EstudiantesComponent {
   itemSeleccionado: any = {};
   modoEdicion: boolean = false;
 
+  id:any
+  nombre:any
+  apellido:any
+  email:any
+  telefono:any
+
+
+  //Form
+  cargar(form:any){
+    this.servicio.postEstudiantes(form.value).subscribe()
+
+    console.log(form.value)
+    location.reload()
+  }
+
   //MÉTODO GET
   ngOnInit(){
     this.servicio.getEstudiantes().subscribe(estudiantes => {
@@ -25,35 +40,37 @@ export class EstudiantesComponent {
   }
 
   //MÉTODO POST
-  guardarEstudiante(id: string, nombre:string, apellido:string, email:string, telefono:string){
-    const ide:number=parseInt(id)
+  guardarEstudiante(id: any, nombre:any, apellido:any, email:any, telefono:any){
+    
     const temp ={
-      "id":ide,
+      "id":id,
       "nombre": nombre,
       "apellido": apellido,
       "email": email,
       "telefono": telefono
     }
     this.servicio.postEstudiantes(temp).subscribe();
+    location.reload()
     }
 
     //METODO EDICION
     editarEstudiante(dataEstudiante: any): void {
       this.itemSeleccionado = {...dataEstudiante};
       this.modoEdicion = true;
+      location.reload()
     }
 
 //MÉTODO PUT
-  actualizarEstudiante(id: string, nombre:string, apellido:string, email:string, telefono:string){
-    const ide:number= parseInt(id)
-    const temp={
-      "id":ide,
+  actualizarEstudiante(id:any, nombre:any, apellido:any, email:any, telefono:any){
+      const temp={
+      "id":id,
       "nombre": nombre,
       "apellido": apellido,
       "email": email,
       "telefono": telefono
     }
-    this.servicio.putEstudiantes(temp, ide).subscribe();
+    this.servicio.putEstudiantes(temp, id).subscribe();
+    location.reload()
   }
 
   guardar(): void {
@@ -67,13 +84,14 @@ export class EstudiantesComponent {
 
     this.itemSeleccionado = {};
     this.modoEdicion = false;
+    location.reload()
   }
 
 
   //MÉTODO DELETE
-  eliminarEstudiante(id:string){
-    const ide: number= parseInt(id)
-    this.servicio.deleteEstudiantes(ide).subscribe();
+  eliminarEstudiante(id:any){
 
+    this.servicio.deleteEstudiantes(id).subscribe();
+    location.reload()
   }
 }

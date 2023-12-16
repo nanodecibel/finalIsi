@@ -18,18 +18,18 @@ export class EstudianteService {
   }
 
   //METODO POST
-  postEstudiantes(user:any): Observable<any>{
-    return this.http.post(this.API_ESTUDIANTES, user);
+  postEstudiantes(nombre:any): Observable<any>{
+    return this.http.post(this.API_ESTUDIANTES, nombre);
   }
 
   //METODO PUT
-  putEstudiantes(user:any, id:number): Observable<any>{
+  putEstudiantes(nombre:any, id:any): Observable<any>{
     this.API_ESTUDIANTES= `${this.API_ESTUDIANTES}/${id}`
-    return this.http.put(this.API_ESTUDIANTES, user);
+    return this.http.put(this.API_ESTUDIANTES, nombre);
   }
 
   //METODO DELETE
-  deleteEstudiantes (id:number): Observable<any>{
+  deleteEstudiantes (id:any): Observable<any>{
     this.API_ESTUDIANTES= `${this.API_ESTUDIANTES}/${id}`
     return this.http.delete(this.API_ESTUDIANTES);
   }
