@@ -41,6 +41,28 @@
       "apellido": "Perez",
       "email": "aperez@hotmail.com",
       "telefono": "02839848"
-    }
+    },
+    {
+      "id": 7,
+      "nombre": "Maria",
+      "apellido": "Chavez",
+      "email": "mchavez21@gmail.com",
+      "telefono": "0933892234"
+    },
+    {
+      "id": 8,
+      "nombre": "José",
+      "apellido": "Polo",
+      "email": "j_polo@hotmail.com",
+      "telefono": "02839848"
+    },
+    {
+      "id": 9,
+      "nombre": "Martina",
+      "apellido": "Chavez",
+      "email": "mchavez21@gmail.com",
+      "telefono": "0929288299"
+  }
   ]
 }
+

@@ -17,21 +17,6 @@ export class EstudiantesComponent {
   itemSeleccionado: any = {};
   modoEdicion: boolean = false;
 
-  id:any
-  nombre:any
-  apellido:any
-  email:any
-  telefono:any
-
-
-  //Form
-  cargar(form:any){
-    this.servicio.postEstudiantes(form.value).subscribe()
-
-    console.log(form.value)
-    location.reload()
-  }
-
   //MÉTODO GET
   ngOnInit(){
     this.servicio.getEstudiantes().subscribe(estudiantes => {
@@ -41,7 +26,7 @@ export class EstudiantesComponent {
 
   //MÉTODO POST
   guardarEstudiante(id: any, nombre:any, apellido:any, email:any, telefono:any){
-    
+
     const temp ={
       "id":id,
       "nombre": nombre,
@@ -55,43 +40,53 @@ export class EstudiantesComponent {
 
     //METODO EDICION
     editarEstudiante(dataEstudiante: any): void {
-      this.itemSeleccionado = {...dataEstudiante};
+      this.itemSeleccionado = {dataEstudiante};
       this.modoEdicion = true;
-      location.reload()
     }
 
 //MÉTODO PUT
-  actualizarEstudiante(id:any, nombre:any, apellido:any, email:any, telefono:any){
-      const temp={
+  actualizarEstudiante(id: any, nombre:any, apellido:any, email:any, telefono:any){
+
+    const temp={
       "id":id,
       "nombre": nombre,
       "apellido": apellido,
       "email": email,
       "telefono": telefono
     }
-    this.servicio.putEstudiantes(temp, id).subscribe();
-    location.reload()
+    this.servicio.putEstudiantes(id).subscribe(() => this.guardarEstudiante);
   }
 
-  guardar(): void {
-    if (this.modoEdicion) {
-      const index = this.dataEstudiante.findIndex((e: { nombre: any; }) => e.nombre === this.itemSeleccionado.nombre);
-      this.dataEstudiante[index] = { ...this.itemSeleccionado };
-    } else {
-      const id = this.dataEstudiante.length + 1;
-      this.dataEstudiante.push({ id, ...this.itemSeleccionado });
-    }
+  //guardar(): void {
+  //  if (this.modoEdicion) {
+  //    const index = this.dataEstudiante.findIndex((e: { estudiantes: any; }) => e.estudiantes === this.itemSeleccionado.nombre);
+  //    this.dataEstudiante[index] = { ...this.itemSeleccionado };
+  //  } else {
+  //    const id = this.dataEstudiante.length + 1;
+  //    this.dataEstudiante.push({ id, ...this.itemSeleccionado });
+  //  }
 
-    this.itemSeleccionado = {};
-    this.modoEdicion = false;
-    location.reload()
-  }
+  //  this.itemSeleccionado = {};
+  //  this.modoEdicion = false;
+  //  location.reload()
+  //}
 
 
   //MÉTODO DELETE
   eliminarEstudiante(id:any){
-
-    this.servicio.deleteEstudiantes(id).subscribe();
+    this.servicio.deleteEstudiantes(id).subscribe(() => this.servicio.getEstudiantes());
     location.reload()
+  }
+
+  //
+  onSubmit():void{
+    this.servicio.putEstudiantes(this.itemSeleccionado).subscribe(() => {
+      this.servicio.getEstudiantes();
+      this.modoEdicion = false;
+    });
+  }
+
+  cancelar(): void{
+    this.modoEdicion = false;
   }
 }
