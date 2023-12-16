@@ -29,11 +29,18 @@
       "telefono": "0982737172"
     },
     {
+      "id": 6,
+      "nombre": "Fernando",
+      "apellido": "Riera",
+      "email": "fer.riera88@hotmail.com",
+      "telefono": "0982736718"
+    },
+    {
       "id": 5,
-      "nombre": "Sofia",
-      "apellido": "Vargas",
-      "email": "sofi34v@gmail.com",
-      "telefono": "0999827372"
+      "nombre": "Andrea",
+      "apellido": "Perez",
+      "email": "aperez@hotmail.com",
+      "telefono": "02839848"
     }
   ]
 }
