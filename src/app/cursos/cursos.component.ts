@@ -29,7 +29,7 @@ export class CursosComponent {
       "codigo": codigo,
       "numEstudiantes": numEstudiantes,
       "aulaAsignada": aulaAsignada,
-      "docentes": docente
+      "docente": docente
     }
     this.servicio.postCursos(temp).subscribe();
     location.reload()
