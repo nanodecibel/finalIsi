@@ -12,7 +12,7 @@ export class EstudiantesComponent {
 
   constructor(private servicio: EstudianteService){}
 
-  estudiantes: any = {};
+  estudiantes: any = [];
 
   itemSeleccionado: any = {};
   modoEdicion: boolean = false;
@@ -74,7 +74,7 @@ export class EstudiantesComponent {
 
   //MÉTODO DELETE
   eliminarEstudiante(id:any){
-    this.servicio.deleteEstudiantes(id).subscribe(() => this.servicio.getEstudiantes());
+    this.servicio.deleteEstudiantes(id).subscribe();
     location.reload()
   }
 
