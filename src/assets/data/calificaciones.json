@@ -1,0 +1,16 @@
+{
+  "calificaciones": [
+    {
+      "nombre": "Alex Perez",
+      "materia": "Base de Datos I",
+      "calificacion": "54",
+      "id": 1
+    },
+    {
+      "id": "2",
+      "nombre": "Pedro Sanchez",
+      "materia": "Contabilidad I",
+      "calificacion": "90"
+    }
+  ]
+}

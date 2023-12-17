@@ -12,7 +12,7 @@ export class EstudiantesComponent {
 
   constructor(private servicio: EstudianteService){}
 
-  dataEstudiante: any = {};
+  dataEstudiante: any = [];
 
   itemSeleccionado: any = {};
   modoEdicion: boolean = false;
@@ -83,6 +83,7 @@ export class EstudiantesComponent {
     this.servicio.putEstudiantes(this.itemSeleccionado).subscribe(() => {
       this.servicio.getEstudiantes();
       this.modoEdicion = false;
+      location.reload()
     });
   }
 
