@@ -45,16 +45,8 @@ export class EstudiantesComponent {
     }
 
 //MÉTODO PUT
-  actualizarEstudiante(id: any, nombre:any, apellido:any, email:any, telefono:any){
-
-    const temp={
-      "id":id,
-      "nombre": nombre,
-      "apellido": apellido,
-      "email": email,
-      "telefono": telefono
-    }
-    this.servicio.putEstudiantes(id).subscribe(() => this.guardarEstudiante);
+  actualizarEstudiante(estudiantes:any){
+    this.servicio.putEstudiantes(estudiantes).subscribe();
   }
 
   //guardar(): void {
