@@ -88,19 +88,19 @@
         <h2>Editar estudiante</h2>
         <form (ngSubmit)="onSubmit()">
           <label>ID:</label>
-          <input type="text" [(ngModel)]="itemSeleccionado.id" name="id" required>
+          <input [(ngModel)]="itemSeleccionado.id" name="id" required>
 
           <label>Nombre:</label>
-          <input type="text" [(ngModel)]="itemSeleccionado.nombre" name="nombre" required>
+          <input [(ngModel)]="itemSeleccionado.nombre" name="nombre" required>
 
           <label>Apellido:</label>
-          <input type="text" [(ngModel)]="itemSeleccionado.apellido" name="apellido" required>
+          <input [(ngModel)]="itemSeleccionado.apellido" name="apellido" required>
 
           <label>Correo electrónico:</label>
-          <input type="email" [(ngModel)]="itemSeleccionado.email" name="email" required>
+          <input [(ngModel)]="itemSeleccionado.email" name="email" required>
 
           <label>Teléfono:</label>
-          <input type="tel" [(ngModel)]="itemSeleccionado.telefono" name="telefono" required>
+          <input [(ngModel)]="itemSeleccionado.telefono" name="telefono" required>
 
           <button class="btn btn-success" type="submit" (click)="actualizarEstudiante(id.value, nombre.value, apellido.value, email.value, telefono.value)">Guardar</button>
           <button class="btn btn-primary" type="button" (click)="cancelar()">Cancelar</button>

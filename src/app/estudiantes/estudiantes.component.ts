@@ -83,6 +83,7 @@ export class EstudiantesComponent {
     this.servicio.putEstudiantes(this.itemSeleccionado).subscribe(() => {
       this.modoEdicion = true;
       location.reload()
+      location.reload()
     });
   }
 
