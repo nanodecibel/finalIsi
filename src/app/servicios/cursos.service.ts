@@ -20,13 +20,13 @@ export class CursosService {
     return this.http.post(this.ApiCursos, cursos)
   }
 
-  putCursos(cursos:any, id:Text):Observable<any>{
-    this.ApiCursos=`${(this.ApiCursos)}/${(cursos.id)}`
+  putCursos(cursos:any):Observable<any>{
+    this.ApiCursos=`${(this.ApiCursos)}/${(cursos.codigo)}`
     return this.http.put(this.ApiCursos, cursos)
   }
 
-  deleteCursos(id:Text):Observable<any>{
-    this.ApiCursos=`${(this.ApiCursos)}/${(id)}`
+  deleteCursos(cursos:any):Observable<any>{
+    this.ApiCursos=`${(this.ApiCursos)}/${(cursos.codigo)}`
     return this.http.delete(this.ApiCursos)
   }
 }
