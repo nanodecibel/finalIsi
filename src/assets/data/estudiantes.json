@@ -29,14 +29,14 @@
       "telefono": "0982737172"
     },
     {
-      "id": 6,
+      "id": 5,
       "nombre": "Fernando",
       "apellido": "Riera",
       "email": "fer.riera88@hotmail.com",
       "telefono": "0982736718"
     },
     {
-      "id": 5,
+      "id": 6,
       "nombre": "Andrea",
       "apellido": "Perez",
       "email": "aperez@hotmail.com",
@@ -58,9 +58,16 @@
     },
     {
       "id": 9,
-      "nombre": "Martina",
+      "nombre": "Juan Martin",
       "apellido": "Chavez",
-      "email": "mchavez21@gmail.com",
+      "email": "jm_chavez@gmail.com",
+      "telefono": "0999283700"
+    },
+    {
+      "id": 10,
+      "nombre": "Nancy",
+      "apellido": "Vivas",
+      "email": "nancyv@gmail.com",
       "telefono": "0929288299"
     }
   ]

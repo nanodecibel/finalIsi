@@ -39,8 +39,8 @@ export class EstudiantesComponent {
     }
 
     //METODO EDICION
-    editarEstudiante(dataEstudiante: any): void {
-      this.itemSeleccionado = {dataEstudiante};
+    editarEstudiante(id: any): void {
+      this.itemSeleccionado = id;
       this.modoEdicion = true;
     }
 
