@@ -52,7 +52,7 @@ export class CalificacionesEvalacionesComponent {
 
   //MÉTODO DELETE
   eliminarCalificacion(id:any){
-    this.servicio.deleteCalificacion(id).subscribe(() => this.servicio.getCalificacion());
+    this.servicio.deleteCalificacion(id).subscribe();
     location.reload()
   }
 

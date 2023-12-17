@@ -7,10 +7,10 @@
       "id": 1
     },
     {
-      "id": "2",
       "nombre": "Pedro Sanchez",
-      "materia": "Contabilidad I",
-      "calificacion": "90"
+      "materia": "Contabilidad II",
+      "calificacion": "84",
+      "id": "2"
     }
   ]
 }
