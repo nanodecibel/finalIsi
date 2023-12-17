@@ -53,14 +53,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let item of dataEstudiante">
+          <tr *ngFor="let item of estudiantes">
             <td>{{item.id}}</td>
             <td>{{item.nombre}}</td>
             <td>{{item.apellido}}</td>
             <td>{{item.email}}</td>
             <td>{{item.telefono}}</td>
             <td>
-              <button class="btn btn-outline-success" (click)="editarEstudiante(dataEstudiante)">Editar</button>
+              <button class="btn btn-outline-success" (click)="editarEstudiante(estudiantes)">Editar</button>
             </td>
           </tr>
         </tbody>
@@ -101,7 +101,7 @@
           <label>Teléfono:</label>
           <input type="tel" [(ngModel)]="itemSeleccionado.telefono" name="telefono" required>
 
-          <button class="btn btn-success" type="submit">Guardar</button>
+          <button class="btn btn-success" type="submit" (click)="actualizarEstudiante(id.value, nombre.value, apellido.value, email.value, telefono.value)">Guardar</button>
           <button class="btn btn-primary" type="button" (click)="cancelar()">Cancelar</button>
 
         </form>
