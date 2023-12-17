@@ -25,8 +25,8 @@ export class CursosComponent {
 
   guardarCurso(nombre: any, codigo: any, numEstudiantes: any, aulaAsignada: any, docente: any) {
     const temp = {
-      "nombreMateria": nombre,
-      "codigoMateria": codigo,
+      "nombre": nombre,
+      "codigo": codigo,
       "numEstudiantes": numEstudiantes,
       "aulaAsignada": aulaAsignada,
       "docentes": docente
