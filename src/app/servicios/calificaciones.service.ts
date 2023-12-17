@@ -28,8 +28,8 @@ export class CalificacionesService {
   }
 
   //METODO DELETE
-  deleteCalificacion(id: any): Observable<any>{
-    this.API_CALIFICACIONES= `${this.API_CALIFICACIONES}/${id}`
+  deleteCalificacion(calificaciones:any): Observable<any>{
+    this.API_CALIFICACIONES= `${this.API_CALIFICACIONES}/${calificaciones.id}`
     return this.http.delete(this.API_CALIFICACIONES);
   }
 }

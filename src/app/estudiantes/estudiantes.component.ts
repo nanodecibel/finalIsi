@@ -17,14 +17,14 @@ export class EstudiantesComponent {
   itemSeleccionado: any = {};
   modoEdicion: boolean = false;
 
-  //MÉTODO GET
+  //MÉTODO GET ok
   ngOnInit(){
     this.servicio.getEstudiantes().subscribe(estudiantes => {
       this.estudiantes= estudiantes
     })
   }
 
-  //MÉTODO POST
+  //MÉTODO POST ok
   guardarEstudiante(id: any, nombre:any, apellido:any, email:any, telefono:any){
 
     const temp ={
@@ -38,9 +38,9 @@ export class EstudiantesComponent {
     location.reload()
     }
 
-    //METODO EDICION
-    editarEstudiante(estudiantes: any): void {
-      this.itemSeleccionado = {estudiantes};
+    //METODO EDICION ok
+    editarEstudiante(id: any): void {
+      this.itemSeleccionado = id;
       this.modoEdicion = true;
     }
 
@@ -78,11 +78,11 @@ export class EstudiantesComponent {
     location.reload()
   }
 
-  //Submit (modo edicion)
+  //Submit ok
   onSubmit():void{
     this.servicio.putEstudiantes(this.itemSeleccionado).subscribe(() => {
+      this.servicio.getEstudiantes();
       this.modoEdicion = true;
-      location.reload()
       location.reload()
     });
   }

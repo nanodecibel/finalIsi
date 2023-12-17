@@ -21,14 +21,14 @@ export class CalificacionesEvalacionesComponent {
   //  console.log('Correo Electrónico:', this.email);
   //}
 
-  //MÉTODO GET
+  //MÉTODO GET ok
   ngOnInit(){
     this.servicio.getCalificacion().subscribe(calificaciones => {
       this.dataCalificacion= calificaciones
     })
   }
 
-  //MÉTODO POST
+  //MÉTODO POST ok
   guardarCalificacion(id:any, nombre:any, materia:any, calificacion:any){
     const temp ={
       "id":id,
@@ -40,7 +40,7 @@ export class CalificacionesEvalacionesComponent {
     location.reload()
   }
 
-  //METODO EDICION
+  //METODO EDICION ok
   editarCalificacion(id: any): void {
     this.itemSeleccionado = id;
     this.modoEdicion = true;
@@ -51,11 +51,12 @@ export class CalificacionesEvalacionesComponent {
   }
 
   //MÉTODO DELETE
-  eliminarCalificacion(id:any){
+  eliminarCalificacion(id:any):void{
     this.servicio.deleteCalificacion(id).subscribe();
     location.reload()
   }
 
+  //onSubmit OK
   onSubmit():void{
     this.servicio.putCalificacion(this.itemSeleccionado).subscribe(() => {
       this.servicio.getCalificacion();
