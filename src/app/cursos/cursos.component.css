@@ -38,7 +38,7 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #c1f9c3;
 }
 
 /* Estilos para la tabla */
@@ -49,7 +49,7 @@ table {
 }
 
 thead {
-    background-color: #4CAF50;
+    background-color: #121312;
     color: white;
 }
 

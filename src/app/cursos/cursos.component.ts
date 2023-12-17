@@ -23,8 +23,9 @@ export class CursosComponent {
     })
   }
 
-  guardarCurso(nombre: any, codigo: any, numEstudiantes: any, aulaAsignada: any, docente: any) {
+  guardarCurso(id:any, nombre: any, codigo: any, numEstudiantes: any, aulaAsignada: any, docente: any) {
     const temp = {
+      "id": id,
       "nombre": nombre,
       "codigo": codigo,
       "numEstudiantes": numEstudiantes,
@@ -39,13 +40,13 @@ export class CursosComponent {
     this.servicio.putCursos(cursos).subscribe();
   }
 
-  editarCurso(codigo: any): void {
-    this.itemSeleccionado = codigo;
+  editarCurso(id: any): void {
+    this.itemSeleccionado = id;
     this.modoEdicion = true;
   }
 
-  eliminarCurso(codigo:any):void {
-    this.servicio.deleteCursos(codigo).subscribe();
+  eliminarCurso(id:any):void {
+    this.servicio.deleteCursos(id).subscribe();
     location.reload()
   }
 

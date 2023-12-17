@@ -11,6 +11,12 @@
       "materia": "Contabilidad II",
       "calificacion": "84",
       "id": "2"
+    },
+    {
+      "nombre": "Martin Chavez",
+      "materia": "Matemática",
+      "calificacion": "90",
+      "id": "3"
     }
   ]
 }

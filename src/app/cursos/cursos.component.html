@@ -11,103 +11,89 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="cursos.component.css" />
-</head>
-<body>
-
-  <br>
-  <br>
-  <div class="card-body" id="CreateCursos">
-
+  </head>
+  <body>
+    <br />
+    <br />
+    <div class="card-body">
       <h2 class="title">Crear nueva Materia</h2>
 
       <form class="form">
         <div>
+          <label class="form-label" for="id">ID Materia:</label>
+          <input type="number" id="id" name="id" #id required />
+        </div>
+        <div>
           <label class="form-label" for="nombre">Nombre de la Materia:</label>
-          <input type="text" id="nombre" name="nombre" #nombre required>
-          </div>
-          <div>
+          <input type="text" id="nombre" name="nombre" #nombre required />
+        </div>
+        <div>
           <label class="form-label" for="codigo">Código de la Materia:</label>
-          <input type="text" id="codigo" name="codigo" #codigo required>
-          </div>
-          <div>
-          <label class="form-label" for="numEstudiantes">Número de Estudiantes:</label>
-          <input type="number" id="numEstudiantes" name="numEstudiantes" #numEstudiantes required>
-          </div>
-          <div>
+          <input type="text" id="codigo" name="codigo" #codigo required />
+        </div>
+        <div>
+          <label class="form-label" for="numEstudiantes"
+            >Número de Estudiantes:</label
+          >
+          <input
+            type="number"
+            id="numEstudiantes"
+            name="numEstudiantes"
+            #numEstudiantes
+            required
+          />
+        </div>
+        <div>
           <label class="form-label" for="aulaAsignada">Aula Asignada:</label>
-          <input type="text" id="aulaAsignada" name="aulaAsignada" #aulaAsignada required>
-          </div>
-          <div>
+          <input
+            type="text"
+            id="aulaAsignada"
+            name="aulaAsignada"
+            #aulaAsignada
+            required
+          />
+        </div>
+        <div>
           <label class="form-label" for="docente">Docentes:</label>
           <select id="docente" name="docente" #docente required>
-              <option value="Janio Allauca">Janio Allauca</option>
-              <option value="Carlos Hidalgo">Cristina Gracia</option>
-              <option value="Valeria Fernandez">Valeria Fernández</option>
-              <option value="Christopher Pesantez">Christopher Pesántez</option>
-              <option value="Carlos Hidalgo">Carlos Hidalgo</option>
+            <option value="Janio Allauca">Janio Allauca</option>
+            <option value="Cristina Gracia">Cristina Gracia</option>
+            <option value="Valeria Fernández">Valeria Fernández</option>
+            <option value="Christopher Pesántez">Christopher Pesántez</option>
+            <option value="Carlos Hidalgo">Carlos Hidalgo</option>
           </select>
-          </div>
+        </div>
 
-          <!-- Botón de envío del formulario -->
-          <button type="submit" (click)="guardarCurso(nombre.value, codigo.value, numEstudiantes.value, aulaAsignada.value, docente.value)">Enviar</button>
+        <!-- Botón de envío del formulario -->
+        <button
+          type="submit"
+          (click)="
+            guardarCurso(
+              id.value,
+              nombre.value,
+              codigo.value,
+              numEstudiantes.value,
+              aulaAsignada.value,
+              docente.value
+            )
+          "
+        >
+          Enviar
+        </button>
       </form>
-
-
-  </div>
-  <div id="Asignacion">
-    <select class="options">
-      <option value="curso1">Curso 1</option>
-      <option value="curso2">Curso 2</option>
-      <option value="curso3">Curso 3</option>
-      <option value="curso4">Curso 4</option>
-    </select>
-    <div class="row">
-    <div class="col listados" id="listadoGeneral">
-      <h2>Estudiantes por Asignar</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Código Único</th>
-            <th>Nombres</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-         <tr>
-          <td>001</td>
-          <td>Stefanny</td>
-          <td>
-              <button>Agregar</button>
-          </td>
-         </tr>
-         <tr>
-          <td>002</td>
-          <td>Dayanna</td>
-          <td>
-              <button>Agregar</button>
-          </td>
-         </tr>
-         <tr>
-          <td>003</td>
-          <td>Kevin</td>
-          <td>
-              <button>Agregar</button>
-          </td>
-         </tr>
-         <tr>
-          <td>004</td>
-          <td>Fanny</td>
-          <td>
-              <button>Agregar</button>
-          </td>
-         </tr>
-        </tbody>
-      </table>
     </div>
-    <div class="col listados" id="listadoCurso">
-     <h2>Estudiantes Asignados</h2>
-      <table>
-          <thead>
+    <div id="Asignacion">
+      <select class="options">
+        <option value="curso1">Curso 1</option>
+        <option value="curso2">Curso 2</option>
+        <option value="curso3">Curso 3</option>
+        <option value="curso4">Curso 4</option>
+      </select>
+      <div class="row">
+        <div class="col listados" id="listadoGeneral">
+          <h2>Estudiantes por Asignar</h2>
+          <table>
+            <thead>
               <tr>
                 <th>Código Único</th>
                 <th>Nombres</th>
@@ -116,105 +102,179 @@
             </thead>
             <tbody>
               <tr>
-                  <td>001</td>
-                  <td>Stefanny</td>
-                  <td>
-                      <button>Quitar</button>
-                  </td>
-                 </tr>
-                 <tr>
-                  <td>002</td>
-                  <td>Dayanna</td>
-                  <td>
-                      <button>Quitar</button>
-                  </td>
-                 </tr>
-                 <tr>
-                  <td>003</td>
-                  <td>Kevin</td>
-                  <td>
-                      <button>Quitar</button>
-                  </td>
-                 </tr>
-                 <tr>
-                  <td>004</td>
-                  <td>Fanny</td>
-                  <td>
-                      <button>Quitar</button>
-                  </td>
-                 </tr>
-            </tbody>
-      </table>
-    </div>
-  </div>
-  <br />
-        <br />
-  <div>
-      <h2>Listado de materias disponibles</h2>
-      <table>
-          <thead>
-              <tr>
-                  <th>Nombre de la Materia</th>
-                  <th>Código de la Materia</th>
-                  <th>Número de Estudiantes</th>
-                  <th>Aula Asignada</th>
-                  <th>Docente</th>
-                  <th>Acciones</th>
+                <td>001</td>
+                <td>Stefanny</td>
+                <td>
+                  <button>Agregar</button>
+                </td>
               </tr>
+              <tr>
+                <td>002</td>
+                <td>Dayanna</td>
+                <td>
+                  <button>Agregar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>003</td>
+                <td>Kevin</td>
+                <td>
+                  <button>Agregar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>004</td>
+                <td>Fanny</td>
+                <td>
+                  <button>Agregar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col listados" id="listadoCurso">
+          <h2>Estudiantes Asignados</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Código Único</th>
+                <th>Nombres</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>001</td>
+                <td>Stefanny</td>
+                <td>
+                  <button>Quitar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>002</td>
+                <td>Dayanna</td>
+                <td>
+                  <button>Quitar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>003</td>
+                <td>Kevin</td>
+                <td>
+                  <button>Quitar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>004</td>
+                <td>Fanny</td>
+                <td>
+                  <button>Quitar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <br />
+      <br />
+      <div>
+        <h2>Listado de materias disponibles</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>ID de la Materia</th>
+              <th>Nombre de la Materia</th>
+              <th>Código de la Materia</th>
+              <th>Número de Estudiantes</th>
+              <th>Aula Asignada</th>
+              <th>Docente</th>
+              <th>Acciones</th>
+            </tr>
           </thead>
           <tbody>
-              <tr *ngFor="let item of dataCursos">
-                  <td>{{item.nombre}}</td>
-                  <td>{{item.codigo}}</td>
-                  <td>{{item.numEstudiantes}}</td>
-                  <td>{{item.aulaAsignada}}</td>
-                  <td>{{item.docente}}</td>
-                  <td>
-                    <button
-                      class="btn btn-outline-success"
-                      (click)="editarCurso(codigo)"
-                    >Editar</button>
+            <tr *ngFor="let item of dataCursos">
+              <td>{{ item.id }}</td>
+              <td>{{ item.nombre }}</td>
+              <td>{{ item.codigo }}</td>
+              <td>{{ item.numEstudiantes }}</td>
+              <td>{{ item.aulaAsignada }}</td>
+              <td>{{ item.docente }}</td>
+              <td>
+                <button
+                  class="btn btn-outline-success"
+                  (click)="editarCurso(id)"
+                >
+                  Editar
+                </button>
 
-                    <button
-                      type="submit"
-                      class="btn btn-danger"
-                      (click)="eliminarCurso(codigo)"
-                    >Eliminar</button>
-                  </td>
-              </tr>
+                <button
+                  type="submit"
+                  class="btn btn-danger"
+                  (click)="eliminarCurso(id)"
+                >
+                  Eliminar
+                </button>
+              </td>
+            </tr>
           </tbody>
-      </table>
-  </div>
+        </table>
+      </div>
 
-  <div *ngIf="modoEdicion">
-    <h2>Editar materias</h2>
-      <form action="" (ngSubmit)="onSubmit()">
-        <label for="">Nombre de la materia:</label>
-        <input type="text" [(ngModel)]="itemSeleccionado.nombre" name="nombre" required>
+      <div *ngIf="modoEdicion">
+        <h2>Editar materias</h2>
+        <form (ngSubmit)="onSubmit()">
+          <label>ID de la materia:</label>
+          <input
+            [(ngModel)]="itemSeleccionado.id"
+            name="id"
+            required
+          />
 
-        <label for="">Código de la materia:</label>
-        <input type="text" [(ngModel)]="itemSeleccionado.codigo" name="codigo" required>
+          <label>Nombre de la materia:</label>
+          <input
+            [(ngModel)]="itemSeleccionado.nombre"
+            name="nombre"
+            required
+          />
 
-        <label for="">Número de estudiantes:</label>
-        <input type="text" [(ngModel)]="itemSeleccionado.numEstudiantes" name="numEstudiantes" required>
+          <label>Código de la materia:</label>
+          <input
+            [(ngModel)]="itemSeleccionado.codigo"
+            name="codigo"
+            required
+          />
 
-        <label for="">Aula asignada:</label>
-        <input type="text" [(ngModel)]="itemSeleccionado.aulaAsignada" name="aulaAsignada" required>
+          <label>Número de estudiantes:</label>
+          <input
+            [(ngModel)]="itemSeleccionado.numEstudiantes"
+            name="numEstudiantes"
+            required
+          />
 
-        <label for="docente">Docente:</label>
-          <select id="docente" name="docente" [(ngModel)]="itemSeleccionado.docente" name="docente" required>
-              <option value="Janio Allauca">Janio Allauca</option>
-              <option value="Carlos Hidalgo">Cristina Gracia</option>
-              <option value="Valeria Fernandez">Valeria Fernández</option>
-              <option value="Chistopher Pezantes">Christopher Pesántez</option>
-              <option value="Carlos Hidalgo">Carlos Hidalgo</option>
+          <label>Aula asignada:</label>
+          <input
+            [(ngModel)]="itemSeleccionado.aulaAsignada"
+            name="aulaAsignada"
+            required
+          />
+
+          <label>Docente:</label>
+          <select
+            [(ngModel)]="itemSeleccionado.docente"
+            name="docente"
+            required
+          >
+            <option value="Janio Allauca">Janio Allauca</option>
+            <option value="Cristina Gracia">Cristina Gracia</option>
+            <option value="Valeria Fernández">Valeria Fernández</option>
+            <option value="Christopher Pesántez">Christopher Pesántez</option>
+            <option value="Carlos Hidalgo">Carlos Hidalgo</option>
           </select>
 
-        <button type="submit">Actualizar</button>
-        <button type="button" (click)="cancelar()">Cancelar</button>
-      </form>
-  </div>
-
-
-
-
+          <button type="submit">Actualizar</button>
+          <button type="button" (click)="cancelar()">Cancelar</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

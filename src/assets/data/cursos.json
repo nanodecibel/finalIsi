@@ -1,5 +1,5 @@
 {
-  "administrativo": [
+  "cursos": [
     {
       "id": 1,
       "nombre": "Matematica",
@@ -23,6 +23,14 @@
       "numEstudiantes": 40,
       "aulaAsignada": "TM11",
       "docente": "Junior Campos"
+    },
+    {
+      "nombre": "Base de Datos I",
+      "codigo": "Bas101",
+      "numEstudiantes": "30",
+      "aulaAsignada": "BD12",
+      "docente": "Christopher Pesantez",
+      "id": "4"
     }
   ]
 }
