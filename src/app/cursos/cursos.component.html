@@ -168,7 +168,9 @@
                 <td>004</td>
                 <td>Fanny</td>
                 <td>
-                  <button>Quitar</button>
+                  <button>Quitar
+                    
+                  </button>
                 </td>
               </tr>
             </tbody>
@@ -202,7 +204,7 @@
               <td>
                 <button
                   class="btn btn-outline-success"
-                  (click)="editarCurso(id)"
+                  (click)="editarCurso(item)"
                 >
                   Editar
                 </button>
@@ -210,7 +212,7 @@
                 <button
                   type="submit"
                   class="btn btn-danger"
-                  (click)="eliminarCurso(id)"
+                  (click)="eliminarCurso(item)"
                 >
                   Eliminar
                 </button>

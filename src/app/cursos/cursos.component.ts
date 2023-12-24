@@ -36,8 +36,9 @@ export class CursosComponent {
     location.reload()
   }
 
-  actualizarCurso(cursos:any){
-    this.servicio.putCursos(cursos).subscribe();
+  actualizarCurso(curso:any){
+    console.log(curso)
+    this.servicio.putCursos(curso).subscribe();
   }
 
   editarCurso(id: any): void {
@@ -45,10 +46,15 @@ export class CursosComponent {
     this.modoEdicion = true;
   }
 
-  eliminarCurso(id:any):void {
-    this.servicio.deleteCursos(id).subscribe();
-    location.reload()
+  eliminarCurso(curso: any): void {
+    this.servicio.deleteCursos(curso).subscribe(
+      () => {
+        console.log('Curso eliminado con éxito');
+        location.reload();
+      },
+    );
   }
+  
 
   onSubmit():void{
     this.servicio.putCursos(this.itemSeleccionado).subscribe(() => {
