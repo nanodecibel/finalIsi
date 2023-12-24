@@ -9,24 +9,24 @@ export class CursosService {
 
   constructor(private http:HttpClient) { }
 
-  private ApiCursos="http://localhost:3000/administrativo"
+  private API_CURSOS="http://localhost:3000/cursos"
 
   getCursos():Observable<any>{
-    return this.http.get(this.ApiCursos)
+    return this.http.get(this.API_CURSOS);
   }
-  
-  
+
+
   postCursos(cursos:any): Observable<any>{
-    return this.http.post(this.ApiCursos, cursos)
+    return this.http.post(this.API_CURSOS, cursos);
   }
 
-  putCursos(cursos:any, id:Text):Observable<any>{
-    this.ApiCursos=`$(this.ApiCursos)/$(codigoMateria)`
-    return this.http.put(this.ApiCursos, cursos)
+  putCursos(cursos:any):Observable<any>{
+    this.API_CURSOS=`${(this.API_CURSOS)}/${cursos.id}`
+    return this.http.put(this.API_CURSOS, cursos);
   }
 
-  deleteCursos(id:Text):Observable<any>{
-    this.ApiCursos=`$(this.ApiCursos)/$(codigoMateria)`
-    return this.http.delete(this.ApiCursos)
+  deleteCursos(cursos:any):Observable<any>{
+    this.API_CURSOS= `${this.API_CURSOS}/${cursos.id}`
+    return this.http.delete(this.API_CURSOS);
   }
 }
