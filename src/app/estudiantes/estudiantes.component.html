@@ -1,111 +1,163 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Estudiantes</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link rel="stylesheet" href="estudiantes.component.css">
-</head>
-<body>
-  <br>
-  <br>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estudiantes</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="estudiantes.component.css" />
+  </head>
+  <body>
+    <br />
+    <br />
     <h1 class="title">Registro de Estudiantes</h1>
-<div class="card-body">
-    <form class="form" >
-      <div>
-        <label for="id" class="form-label">ID:</label>
-        <input type="number" class="form-control" id="id" required #id>
-      </div>
-      <div>
-        <label for="nombre" class="form-label">Nombre:</label>
-        <input type="text" class="form-control" id="nombre" required #nombre>
-      </div>
-      <div>
-        <label for="apellido" class="form-label">Apellido:</label>
-        <input type="text" class="form-control" id="apellido"  required #apellido>
-      </div>
-      <div>
-        <label for="email" class="form-label">Correo: </label>
-        <input class="email" class="form-control" type="email" id="email" required #email>
-      </div>
-      <div>
-        <label for="telefono" class="form-label">Teléfono:</label>
-        <input type="number" class="form-control" id="telefono" required #telefono>
-      </div>
-      <button type="submit" class="btn btn-info" (click)="guardarEstudiante(id.value, nombre.value, apellido.value, email.value, telefono.value)">Registrar</button>
-    </form>
-  </div>
-<br>
-  <br>
-  <div class="row">
-    <div>
-      <h2>Listado de Estudiantes</h2>
-      <table class="table table-responsive-sm table-striped table-bordered">
-        <thead class="table-dark">
-          <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Email</th>
-            <th>Teléfono</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of dataEstudiante">
-            <td>{{item.id}}</td>
-            <td>{{item.nombre}}</td>
-            <td>{{item.apellido}}</td>
-            <td>{{item.email}}</td>
-            <td>{{item.telefono}}</td>
-            <td>
-              <button class="btn btn-outline-success" (click)="editarEstudiante(id)">Editar</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="card-body">
+      <form class="form">
+        <div>
+          <label for="id" class="form-label">ID:</label>
+          <input type="number" class="form-control" id="id" required #id />
+        </div>
+        <div>
+          <label for="nombre" class="form-label">Nombre:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nombre"
+            required
+            #nombre
+          />
+        </div>
+        <div>
+          <label for="apellido" class="form-label">Apellido:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="apellido"
+            required
+            #apellido
+          />
+        </div>
+        <div>
+          <label for="email" class="form-label">Correo: </label>
+          <input
+            class="email"
+            class="form-control"
+            type="email"
+            id="email"
+            required
+            #email
+          />
+        </div>
+        <div>
+          <label for="telefono" class="form-label">Teléfono:</label>
+          <input
+            type="number"
+            class="form-control"
+            id="telefono"
+            required
+            #telefono
+          />
+        </div>
+        <button
+          type="submit"
+          class="btn btn-info"
+          (click)="
+            guardarEstudiante(
+              id.value,
+              nombre.value,
+              apellido.value,
+              email.value,
+              telefono.value
+            )
+          "
+        >
+          Registrar
+        </button>
+      </form>
     </div>
-  </div>
-
-      <br>
-
+    <br />
+    <br />
+    <div class="row">
       <div>
-        <h2>Eliminar estudiante</h2>
-        <form>
-          <div class="mb-3 mt-3">
-            <label for="id" class="form-label">Ingrese el ID del estudiante a eliminar:</label>
-            <input type="number" class="form-control" id="id" #id>
-          </div>
-          <button type="submit" class="btn btn-danger" (click)="eliminarEstudiante(id.value)">Eliminar</button>
-        </form>
+        <h2>Listado de Estudiantes</h2>
+        <table class="table table-responsive-sm table-striped table-bordered">
+          <thead class="table-dark">
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Email</th>
+              <th>Teléfono</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of dataEstudiante">
+              <td>{{ item.id }}</td>
+              <td>{{ item.nombre }}</td>
+              <td>{{ item.apellido }}</td>
+              <td>{{ item.email }}</td>
+              <td>{{ item.telefono }}</td>
+              <td>
+                <button
+                  class="btn btn-outline-success"
+                  (click)="editarEstudiante(item)"
+                >
+                  Editar
+                </button>
+                <button
+                  type="submit"
+                  class="btn btn-outline-danger"
+                  (click)="eliminarEstudiante(item)"
+                >
+                  Eliminar
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
+    </div>
 
-      <br>
+    <br />
+    <br />
 
-      <div *ngIf="modoEdicion">
-        <h2>Editar estudiante</h2>
-        <form (ngSubmit)="onSubmit()">
-          <label>ID:</label>
-          <input [(ngModel)]="itemSeleccionado.id" name="id" required>
+    <div *ngIf="modoEdicion">
+      <h2>Editar estudiante</h2>
+      <form (ngSubmit)="onSubmit()">
+        <label>ID:</label>
+        <input [(ngModel)]="itemSeleccionado.id" name="id" required />
 
-          <label>Nombre:</label>
-          <input [(ngModel)]="itemSeleccionado.nombre" name="nombre" required>
+        <label>Nombre:</label>
+        <input [(ngModel)]="itemSeleccionado.nombre" name="nombre" required />
 
-          <label>Apellido:</label>
-          <input [(ngModel)]="itemSeleccionado.apellido" name="apellido" required>
+        <label>Apellido:</label>
+        <input
+          [(ngModel)]="itemSeleccionado.apellido"
+          name="apellido"
+          required
+        />
 
-          <label>Correo electrónico:</label>
-          <input [(ngModel)]="itemSeleccionado.email" name="email" required>
+        <label>Correo electrónico:</label>
+        <input [(ngModel)]="itemSeleccionado.email" name="email" required />
 
-          <label>Teléfono:</label>
-          <input [(ngModel)]="itemSeleccionado.telefono" name="telefono" required>
+        <label>Teléfono:</label>
+        <input
+          [(ngModel)]="itemSeleccionado.telefono"
+          name="telefono"
+          required
+        />
 
-          <button class="btn btn-success" type="submit">Guardar</button>
-          <button class="btn btn-primary" type="button" (click)="cancelar()">Cancelar</button>
-
-        </form>
-      </div>
-
-</body>
+        <button class="btn btn-success" type="submit">Actualizar</button>
+        <button class="btn btn-primary" type="button" (click)="cancelar()">
+          Cancelar
+        </button>
+      </form>
+    </div>
+  </body>
 </html>

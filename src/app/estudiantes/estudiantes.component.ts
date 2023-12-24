@@ -10,7 +10,7 @@ import { EstudianteService } from '../servicios/estudiante.service';
 
 export class EstudiantesComponent {
 
-  constructor(private servicio: EstudianteService){}
+  constructor(private servicio: EstudianteService) { }
 
   dataEstudiante: any = [];
 
@@ -18,17 +18,17 @@ export class EstudiantesComponent {
   modoEdicion: boolean = false;
 
   //MÉTODO GET
-  ngOnInit(){
+  ngOnInit() {
     this.servicio.getEstudiantes().subscribe(estudiantes => {
-      this.dataEstudiante= estudiantes
+      this.dataEstudiante = estudiantes
     })
   }
 
   //MÉTODO POST
-  guardarEstudiante(id: any, nombre:any, apellido:any, email:any, telefono:any){
+  guardarEstudiante(id: any, nombre: any, apellido: any, email: any, telefono: any) {
 
-    const temp ={
-      "id":id,
+    const temp = {
+      "id": id,
       "nombre": nombre,
       "apellido": apellido,
       "email": email,
@@ -36,16 +36,17 @@ export class EstudiantesComponent {
     }
     this.servicio.postEstudiantes(temp).subscribe();
     location.reload()
-    }
+  }
 
-    //METODO EDICION
-    editarEstudiante(id: any): void {
-      this.itemSeleccionado = id;
-      this.modoEdicion = true;
-    }
+  //METODO EDICION
+  editarEstudiante(id: any): void {
+    this.itemSeleccionado = id;
+    this.modoEdicion = true;
+  }
 
-//MÉTODO PUT
-  actualizarEstudiante(estudiantes:any){
+  //MÉTODO PUT
+  actualizarEstudiante(estudiantes: any) {
+    console.log(estudiantes)
     this.servicio.putEstudiantes(estudiantes).subscribe();
   }
 
@@ -65,13 +66,17 @@ export class EstudiantesComponent {
 
 
   //MÉTODO DELETE
-  eliminarEstudiante(id:any){
-    this.servicio.deleteEstudiantes(id).subscribe(() => this.servicio.getEstudiantes());
-    location.reload()
+  eliminarEstudiante(estudiantes: any): void {
+    this.servicio.deleteEstudiantes(estudiantes).subscribe(
+      () => {
+        console.log('Estudiante eliminado con éxito');
+        location.reload();
+      },
+    );
   }
 
   //Submit (modo edicion)
-  onSubmit():void{
+  onSubmit(): void {
     this.servicio.putEstudiantes(this.itemSeleccionado).subscribe(() => {
       this.servicio.getEstudiantes();
       this.modoEdicion = false;
@@ -79,7 +84,7 @@ export class EstudiantesComponent {
     });
   }
 
-  cancelar(): void{
+  cancelar(): void {
     this.modoEdicion = false;
   }
 }
