@@ -50,22 +50,7 @@ export class EstudiantesComponent {
     this.servicio.putEstudiantes(estudiantes).subscribe();
   }
 
-  //guardar(): void {
-  //  if (this.modoEdicion) {
-  //    const index = this.dataEstudiante.findIndex((e: { estudiantes: any; }) => e.estudiantes === this.itemSeleccionado.nombre);
-  //    this.dataEstudiante[index] = { ...this.itemSeleccionado };
-  //  } else {
-  //    const id = this.dataEstudiante.length + 1;
-  //    this.dataEstudiante.push({ id, ...this.itemSeleccionado });
-  //  }
-
-  //  this.itemSeleccionado = {};
-  //  this.modoEdicion = false;
-  //  location.reload()
-  //}
-
-
-  //MÉTODO DELETE
+    //MÉTODO DELETE
   eliminarEstudiante(estudiantes: any): void {
     this.servicio.deleteEstudiantes(estudiantes).subscribe(
       () => {
