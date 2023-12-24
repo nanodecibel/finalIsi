@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calificacion - Evaluaciones</title>
+    <title>Calificación - Evaluaciones</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -16,11 +16,11 @@
     <br />
     <br />
     <!-- formulario.component.html -->
+    <h1 class="title">Registro de Calificaciones</h1>
     <div class="card-body">
-      <h2 class="title">Registro de Calificaciones</h2>
       <form class="form">
         <div>
-          <label for="id" class="form-label">Id:</label>
+          <label for="id" class="form-label">ID:</label>
           <input type="number" id="id" name="id" #id required />
         </div>
         <div>
@@ -32,7 +32,7 @@
           <input type="text" id="materia" name="materia" #materia required />
         </div>
         <div>
-          <label for="calificacion" class="form-label">Calificacion:</label>
+          <label for="calificacion" class="form-label">Calificación:</label>
           <input
             type="number"
             id="calificacion"
@@ -41,18 +41,32 @@
             required
           />
         </div>
-        <button type="submit" class="btn btn-success" (click)="guardarCalificacion(id.value,nombre.value,materia.value,calificacion.value)">Guardar</button>
+        <button
+          type="submit"
+          class="btn btn-success"
+          (click)="
+            guardarCalificacion(
+              id.value,
+              nombre.value,
+              materia.value,
+              calificacion.value
+            )
+          "
+        >
+          Guardar
+        </button>
       </form>
-
+    </div>
       <br />
       <br />
-      <div>
+      <div class="row">
+        <div>
         <h2 class="title">Listado de Calificaciones</h2>
 
         <table class="table table-responsive-sm table-striped table-bordered">
           <thead>
             <tr>
-              <th>Id estudiante</th>
+              <th>ID estudiante</th>
               <th>Nombre</th>
               <th>Materia</th>
               <th>Calificación</th>
@@ -69,39 +83,55 @@
                 <button
                   class="btn btn-outline-success"
                   (click)="editarCalificacion(item)"
-                >Editar</button>
+                >
+                  Editar
+                </button>
 
                 <button
                   type="submit"
                   class="btn btn-danger"
                   (click)="eliminarCalificacion(item)"
-                >Eliminar</button>
+                >
+                  Eliminar
+                </button>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
+    </div>
+
+      <br />
+      <br />
 
       <div *ngIf="modoEdicion">
         <h2>Editar Calificación</h2>
         <form (ngSubmit)="onSubmit()">
           <label>Id:</label>
-          <input [(ngModel)]="itemSeleccionado.id" name="id" required>
+          <input [(ngModel)]="itemSeleccionado.id" name="id" required />
 
           <label>Nombre:</label>
-          <input [(ngModel)]="itemSeleccionado.nombre" name="nombre" required>
+          <input [(ngModel)]="itemSeleccionado.nombre" name="nombre" required />
 
           <label>Materia:</label>
-          <input [(ngModel)]="itemSeleccionado.materia" name="materia" required>
+          <input
+            [(ngModel)]="itemSeleccionado.materia"
+            name="materia"
+            required
+          />
 
           <label>Calificación:</label>
-          <input [(ngModel)]="itemSeleccionado.calificacion" name="calificacion" required>
-
-          <button class="btn btn-primary" type="submit">Guardar</button>
-          <button class="btn btn-danger" type="button" (click)="cancelar()">Cancelar</button>
+          <input
+            [(ngModel)]="itemSeleccionado.calificacion"
+            name="calificacion"
+            required
+          />
+          <button class="btn btn-success" type="submit">Actualizar</button>
+          
+          <button class="btn btn-primary" type="button" (click)="cancelar()">
+            Cancelar
+          </button>
         </form>
       </div>
-
-    </div>
   </body>
 </html>

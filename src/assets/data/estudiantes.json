@@ -62,6 +62,13 @@
       "apellido": "Chavez",
       "email": "sofi34@gmail.com",
       "telefono": "0929288299"
+    },
+    {
+      "id": "10",
+      "nombre": "Nancy",
+      "apellido": "Vargas",
+      "email": "nancyv@gmail.com",
+      "telefono": "0929288299"
     }
   ]
 }

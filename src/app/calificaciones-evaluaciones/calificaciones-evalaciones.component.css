@@ -1,3 +1,13 @@
+div{
+  margin: 4px;
+}
+
+form {
+  max-width: 200px;
+  margin: 20px 0;
+
+}
+
 label{
   margin-bottom: 3px;
   padding: 5px;
@@ -6,3 +16,10 @@ label{
 table {
   padding: 20px;
 }
+
+button {
+  margin-right: 2px;
+  margin-top: 2px;
+}
+
+

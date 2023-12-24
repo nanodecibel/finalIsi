@@ -15,9 +15,8 @@
   <body>
     <br />
     <br />
+    <h1 class="title">Crear nueva Materia</h1>
     <div class="card-body">
-      <h2 class="title">Crear nueva Materia</h2>
-
       <form class="form">
         <div>
           <label class="form-label" for="id">ID Materia:</label>
@@ -67,6 +66,7 @@
         <!-- Botón de envío del formulario -->
         <button
           type="submit"
+          class="btn btn-success"
           (click)="
             guardarCurso(
               id.value,
@@ -169,7 +169,7 @@
                 <td>Fanny</td>
                 <td>
                   <button>Quitar
-                    
+
                   </button>
                 </td>
               </tr>
@@ -179,7 +179,8 @@
       </div>
       <br />
       <br />
-      <div>
+      <div class="row">
+        <div>
         <h2>Listado de materias disponibles</h2>
         <table>
           <thead>
@@ -221,6 +222,7 @@
           </tbody>
         </table>
       </div>
+    </div>
 
       <div *ngIf="modoEdicion">
         <h2>Editar materias</h2>
@@ -273,10 +275,9 @@
             <option value="Carlos Hidalgo">Carlos Hidalgo</option>
           </select>
 
-          <button type="submit">Actualizar</button>
-          <button type="button" (click)="cancelar()">Cancelar</button>
+          <button type="submit" class="btn btn-success">Actualizar</button>
+          
+          <button type="button" class="btn btn-primary" (click)="cancelar()">Cancelar</button>
         </form>
       </div>
-    </div>
-  </body>
-</html>
+
