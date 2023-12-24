@@ -18,10 +18,11 @@ label {
     display: block;
     margin-bottom: 3px;
     color: #333;
+    font-weight: bold;
 }
 
 button {
-  margin-right: 10px;
+  margin: 10px 4px;
 }
 
 input,

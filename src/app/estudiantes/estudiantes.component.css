@@ -20,6 +20,7 @@ label{
   margin-bottom: 3px;
   padding: 5px;
   text-justify: auto;
+  font-weight: bold;
 }
 
 input.email {
@@ -27,7 +28,7 @@ input.email {
 }
 
 button {
-  margin-right: 10px;
+  margin: 10px 4px;
 }
 
 

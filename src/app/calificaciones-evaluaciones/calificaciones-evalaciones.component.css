@@ -12,14 +12,14 @@ label{
   margin-bottom: 3px;
   padding: 5px;
   text-justify: auto;
+  font-weight: bold;
 }
 table {
   padding: 20px;
 }
 
 button {
-  margin-right: 2px;
-  margin-top: 2px;
+  margin: 10px 4px;
 }
 
 

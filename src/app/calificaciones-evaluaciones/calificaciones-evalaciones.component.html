@@ -21,20 +21,42 @@
       <form class="form">
         <div>
           <label for="id" class="form-label">ID:</label>
-          <input type="number" id="id" name="id" #id required />
+          <input
+            type="number"
+            class="form-control"
+            id="id"
+            name="id"
+            #id
+            required
+          />
         </div>
         <div>
           <label for="nombre" class="form-label">Estudiante:</label>
-          <input type="text" id="nombre" name="nombre" #nombre required />
+          <input
+            type="text"
+            class="form-control"
+            id="nombre"
+            name="nombre"
+            #nombre
+            required
+          />
         </div>
         <div>
           <label for="materia" class="form-label">Materia:</label>
-          <input type="text" id="materia" name="materia" #materia required />
+          <input
+            type="text"
+            class="form-control"
+            id="materia"
+            name="materia"
+            #materia
+            required
+          />
         </div>
         <div>
           <label for="calificacion" class="form-label">Calificación:</label>
           <input
             type="number"
+            class="form-control"
             id="calificacion"
             name="calificacion"
             #calificacion
@@ -57,14 +79,14 @@
         </button>
       </form>
     </div>
-      <br />
-      <br />
-      <div class="row">
-        <div>
+    <br />
+    <br />
+    <div class="row">
+      <div>
         <h2 class="title">Listado de Calificaciones</h2>
 
         <table class="table table-responsive-sm table-striped table-bordered">
-          <thead>
+          <thead class="table-dark">
             <tr>
               <th>ID estudiante</th>
               <th>Nombre</th>
@@ -101,37 +123,49 @@
       </div>
     </div>
 
-      <br />
-      <br />
+    <br />
+    <br />
 
-      <div *ngIf="modoEdicion">
-        <h2>Editar Calificación</h2>
-        <form (ngSubmit)="onSubmit()">
-          <label>Id:</label>
-          <input [(ngModel)]="itemSeleccionado.id" name="id" required />
+    <div *ngIf="modoEdicion">
+      <h2>Editar Calificación</h2>
+      <form (ngSubmit)="onSubmit()">
+        <label>Id:</label>
+        <input
+          class="form-control"
+          [(ngModel)]="itemSeleccionado.id"
+          name="id"
+          required
+        />
 
-          <label>Nombre:</label>
-          <input [(ngModel)]="itemSeleccionado.nombre" name="nombre" required />
+        <label>Nombre:</label>
+        <input
+          class="form-control"
+          [(ngModel)]="itemSeleccionado.nombre"
+          name="nombre"
+          required
+        />
 
-          <label>Materia:</label>
-          <input
-            [(ngModel)]="itemSeleccionado.materia"
-            name="materia"
-            required
-          />
+        <label>Materia:</label>
+        <input
+          class="form-control"
+          [(ngModel)]="itemSeleccionado.materia"
+          name="materia"
+          required
+        />
 
-          <label>Calificación:</label>
-          <input
-            [(ngModel)]="itemSeleccionado.calificacion"
-            name="calificacion"
-            required
-          />
-          <button class="btn btn-success" type="submit">Actualizar</button>
-          
-          <button class="btn btn-primary" type="button" (click)="cancelar()">
-            Cancelar
-          </button>
-        </form>
-      </div>
+        <label>Calificación:</label>
+        <input
+          class="form-control"
+          [(ngModel)]="itemSeleccionado.calificacion"
+          name="calificacion"
+          required
+        />
+        <button class="btn btn-success" type="submit">Actualizar</button>
+
+        <button class="btn btn-primary" type="button" (click)="cancelar()">
+          Cancelar
+        </button>
+      </form>
+    </div>
   </body>
 </html>
