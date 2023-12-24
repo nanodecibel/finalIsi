@@ -5,21 +5,21 @@
       "nombre": "Pedro",
       "apellido": "Álava",
       "email": "pedro.a@hotmail.com",
-      "telefono": "Masculino"
+      "telefono": "0982006718"
     },
     {
       "id": 2,
-      "nombre": "Andrea",
-      "apellido": "Perez",
-      "email": "a.perez@hotmail.com",
-      "telefono": "Femenino"
+      "nombre": "Maria",
+      "apellido": "Herreha",
+      "email": "m.herrera@hotmail.com",
+      "telefono": "0992737288"
     },
     {
       "id": 3,
       "nombre": "José",
       "apellido": "Vela",
       "email": "jose.vela@hotmail.com",
-      "telefono": "Masculino"
+      "telefono": "0999736101"
     },
     {
       "id": 4,
@@ -30,17 +30,17 @@
     },
     {
       "id": 5,
-      "nombre": "Fernando",
-      "apellido": "Riera",
-      "email": "fer.riera88@hotmail.com",
-      "telefono": "0982736718"
-    },
-    {
-      "id": 6,
       "nombre": "Andrea",
       "apellido": "Perez",
       "email": "aperez@hotmail.com",
       "telefono": "02839848"
+    },
+    {
+      "id": 6,
+      "nombre": "Fernando",
+      "apellido": "Riera",
+      "email": "fer.riera88@hotmail.com",
+      "telefono": "0982736718"
     },
     {
       "id": 7,
@@ -58,13 +58,12 @@
     },
     {
       "id": 9,
-      "nombre": "Juan Martin",
+      "nombre": "Sofia",
       "apellido": "Chavez",
-      "email": "jm_chavez@gmail.com",
-      "telefono": "0999283700"
+      "email": "sofi34@gmail.com",
+      "telefono": "0929288299"
     },
     {
-      "id": 10,
       "nombre": "Nancy",
       "apellido": "Vivas",
       "email": "nancyv@gmail.com",

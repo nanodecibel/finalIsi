@@ -1,26 +1,28 @@
 {
-    "administrativo":[
-        {
-            "nombre":"Matematica",
-            "codigo":"Mat101",
-            "numEstudiantes":40,
-            "aulaAsignada":"TM1",
-            "docente":"Janio Allauca"
-
-        },
-        {
-            "nombre":"Fisica",
-            "codigo":"Fis101",
-            "numEstudiantes":40,
-            "aulaAsignada":"TM11",
-            "docente":"Junior Campos"
-        },
-        {
-            "nombre":"Fisica",
-            "codigo":"Fis101",
-            "numEstudiantes":40,
-            "aulaAsignada":"TM11",
-            "docente":"Junior Campos"
-        }
-    ]
+  "administrativo": [
+    {
+      "id": 1,
+      "nombre": "Matematica",
+      "codigo": "Mat101",
+      "numEstudiantes": 40,
+      "aulaAsignada": "TM1",
+      "docente": "Janio Allauca"
+    },
+    {
+      "id": 2,
+      "nombre": "Fisica",
+      "codigo": "Fis101",
+      "numEstudiantes": 40,
+      "aulaAsignada": "TM11",
+      "docente": "Junior Campos"
+    },
+    {
+      "id": 3,
+      "nombre": "Fisica",
+      "codigo": "Fis101",
+      "numEstudiantes": 40,
+      "aulaAsignada": "TM11",
+      "docente": "Junior Campos"
+    }
+  ]
 }

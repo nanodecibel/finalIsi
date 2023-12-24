@@ -12,19 +12,19 @@ export class EstudiantesComponent {
 
   constructor(private servicio: EstudianteService) { }
 
-  dataEstudiante: any = [];
+  estudiantes: any = [];
 
   itemSeleccionado: any = {};
   modoEdicion: boolean = false;
 
-  //MÉTODO GET
-  ngOnInit() {
+  //MÉTODO GET ok
+  ngOnInit(){
     this.servicio.getEstudiantes().subscribe(estudiantes => {
-      this.dataEstudiante = estudiantes
+      this.estudiantes= estudiantes
     })
   }
 
-  //MÉTODO POST
+  //MÉTODO POST ok
   guardarEstudiante(id: any, nombre: any, apellido: any, email: any, telefono: any) {
 
     const temp = {
@@ -38,7 +38,7 @@ export class EstudiantesComponent {
     location.reload()
   }
 
-  //METODO EDICION
+  //METODO EDICION ok
   editarEstudiante(id: any): void {
     this.itemSeleccionado = id;
     this.modoEdicion = true;
@@ -60,11 +60,11 @@ export class EstudiantesComponent {
     );
   }
 
-  //Submit (modo edicion)
+  //Submit ok
   onSubmit(): void {
     this.servicio.putEstudiantes(this.itemSeleccionado).subscribe(() => {
       this.servicio.getEstudiantes();
-      this.modoEdicion = false;
+      this.modoEdicion = true;
       location.reload()
     });
   }
