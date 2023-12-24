@@ -66,6 +66,7 @@
     {
       "nombre": "Nancy",
 <<<<<<< HEAD
+<<<<<<< HEAD
       "apellido": "Vivas R",
       "email": "nancyv_r45@gmail.com",
       "telefono": "0928283789",
@@ -75,6 +76,11 @@
       "email": "nancyv@gmail.com",
       "telefono": "0928283789"
 >>>>>>> Christopher
+=======
+      "apellido": "Vivas",
+      "email": "nancyv@gmail.com",
+      "telefono": "0928283789"
+>>>>>>> 1a75f27044aca38df9af1fa34c21f97e8ca370b1
     }
   ]
 }
