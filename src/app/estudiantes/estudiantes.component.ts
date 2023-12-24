@@ -67,7 +67,7 @@ export class EstudiantesComponent {
   onSubmit(): void {
     this.servicio.putEstudiantes(this.itemSeleccionado).subscribe(() => {
       this.servicio.getEstudiantes();
-      this.modoEdicion = true;
+      this.modoEdicion = false;
       location.reload()
     });
   }

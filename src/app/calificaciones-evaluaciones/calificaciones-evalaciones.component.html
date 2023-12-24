@@ -47,7 +47,7 @@
       <br />
       <br />
       <div>
-        <h2 class="title">Tabla de Calificaciones</h2>
+        <h2 class="title">Listado de Calificaciones</h2>
 
         <table class="table table-responsive-sm table-striped table-bordered">
           <thead>
@@ -68,13 +68,13 @@
               <td>
                 <button
                   class="btn btn-outline-success"
-                  (click)="editarCalificacion(id)"
+                  (click)="editarCalificacion(item)"
                 >Editar</button>
 
                 <button
                   type="submit"
                   class="btn btn-danger"
-                  (click)="eliminarCalificacion(id)"
+                  (click)="eliminarCalificacion(item)"
                 >Eliminar</button>
               </td>
             </tr>

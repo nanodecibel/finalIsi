@@ -10,16 +10,9 @@ export class CalificacionesEvalacionesComponent {
 
   constructor(private servicio: CalificacionesService){}
 
-  //nombre: string = '';
-  //email: string = '';
   dataCalificacion: any = [];
   itemSeleccionado: any = {};
   modoEdicion: boolean = false;
-
-  //onSubmit() {
-  //  console.log('Nombre:', this.nombre);
-  //  console.log('Correo Electrónico:', this.email);
-  //}
 
   //MÉTODO GET ok
   ngOnInit(){
@@ -47,13 +40,18 @@ export class CalificacionesEvalacionesComponent {
   }
 
   actualizarCalificacion(calificaciones:any){
+    console.log(calificaciones)
     this.servicio.putCalificacion(calificaciones).subscribe();
   }
 
   //MÉTODO DELETE
-  eliminarCalificacion(id:any):void{
-    this.servicio.deleteCalificacion(id).subscribe();
-    location.reload()
+  eliminarCalificacion(calificaciones:any):void{
+    this.servicio.deleteCalificacion(calificaciones).subscribe(
+      () => {
+        console.log('Calificación eliminada con éxito');
+        location.reload();
+      },
+    );
   }
 
   //onSubmit OK
