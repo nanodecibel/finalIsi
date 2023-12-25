@@ -25,11 +25,23 @@
         </div>
         <div>
           <label class="form-label" for="nombre">Nombre de la Materia:</label>
-          <input type="text" id="nombre" name="nombre" #nombre required />
+          <select type="text" id="nombre" name="nombre" #nombre required >
+          <option value="Matematica">Matematica</option>
+          <option value="Mecánica">Mecánica</option>
+          <option value="Software">Software</option>
+          <option value="Cálculo">Cálculo</option>
+          <option value="Acústica">Acústica</option>
+        </select>
         </div>
         <div>
           <label class="form-label" for="codigo">Código de la Materia:</label>
-          <input type="text" id="codigo" name="codigo" #codigo required />
+          <select type="text" id="codigo" name="codigo" #codigo required >
+            <option value="Mat-101">Mat-101</option>
+            <option value="Mec-110">Mec110</option>
+            <option value="Sof-104">Sof-104</option>
+            <option value="Cal-220">Cal-220</option>
+            <option value="Acu-140">Acu-140</option>
+          </select>
         </div>
         <div>
           <label class="form-label" for="numEstudiantes"
@@ -45,13 +57,16 @@
         </div>
         <div>
           <label class="form-label" for="aulaAsignada">Aula Asignada:</label>
-          <input
-            type="text"
-            id="aulaAsignada"
-            name="aulaAsignada"
-            #aulaAsignada
-            required
-          />
+          <select type="text" id="aulaAsignada" name="aulaAsignada" #aulaAsignada required>
+            <option value ="TM-101">TM-101</option>
+            <option value ="GR-200">GR-200</option>
+            <option value ="GR-300">GR-300</option>
+            <option value ="TM-111">TM-111</option>
+
+
+
+        
+          </select>
         </div>
         <div>
           <label class="form-label" for="docente">Docentes:</label>

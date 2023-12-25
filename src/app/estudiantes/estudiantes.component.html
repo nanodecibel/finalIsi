@@ -33,6 +33,16 @@
         <label for="telefono" class="form-label">Teléfono:</label>
         <input type="number" class="form-control" id="telefono" required #telefono>
       </div>
+      <div>
+        <label class="form-label" for="codigo">Código de la Materia:</label>
+        <select type="text" id="codigo" name="codigo" #codigo required >
+          <option value="Mat-101">Mat-101</option>
+          <option value="Mec-110">Mec110</option>
+          <option value="Sof-104">Sof-104</option>
+          <option value="Cal-220">Cal-220</option>
+          <option value="Acu-140">Acu-140</option>
+        </select>
+      </div>
       <button type="submit" class="btn btn-info" (click)="guardarEstudiante(id.value, nombre.value, apellido.value, email.value, telefono.value)">Registrar</button>
     </form>
   </div>
@@ -49,6 +59,7 @@
             <th>Apellido</th>
             <th>Email</th>
             <th>Teléfono</th>
+            <th>Codigo Materia</th>
             <th>Acciones</th>
           </tr>
         </thead>
@@ -59,6 +70,7 @@
             <td>{{item.apellido}}</td>
             <td>{{item.email}}</td>
             <td>{{item.telefono}}</td>
+            <td>{{item.codigo}}</td>
             <td>
               <button class="btn btn-outline-success" (click)="editarEstudiante(id)">Editar</button>
             </td>

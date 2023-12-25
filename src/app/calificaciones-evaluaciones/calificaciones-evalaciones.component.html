@@ -28,8 +28,14 @@
           <input type="text" id="nombre" name="nombre" #nombre required />
         </div>
         <div>
-          <label for="materia" class="form-label">Materia:</label>
-          <input type="text" id="materia" name="materia" #materia required />
+          <label class="form-label" for="codigo">Código de la Materia:</label>
+          <select type="text" id="codigo" name="codigo" #codigo required >
+            <option value="Mat-101">Mat-101</option>
+            <option value="Mec-110">Mec110</option>
+            <option value="Sof-104">Sof-104</option>
+            <option value="Cal-220">Cal-220</option>
+            <option value="Acu-140">Acu-140</option>
+          </select>
         </div>
         <div>
           <label for="calificacion" class="form-label">Calificacion:</label>
@@ -41,7 +47,7 @@
             required
           />
         </div>
-        <button type="submit" class="btn btn-success" (click)="guardarCalificacion(id.value,nombre.value,materia.value,calificacion.value)">Guardar</button>
+        <button type="submit" class="btn btn-success" (click)="guardarCalificacion(id.value,nombre.value,codigo.value,calificacion.value)">Guardar</button>
       </form>
 
       <br />
@@ -63,7 +69,7 @@
             <tr *ngFor="let item of dataCalificacion">
               <td>{{ item.id }}</td>
               <td>{{ item.nombre }}</td>
-              <td>{{ item.materia }}</td>
+              <td>{{ item.codigo }}</td>
               <td>{{ item.calificacion }}</td>
               <td>
                 <button
