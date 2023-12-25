@@ -29,8 +29,8 @@ export class EstudianteService {
   }
 
   //METODO DELETE
-  deleteEstudiantes (id: any): Observable<any>{
-    this.API_ESTUDIANTES= `${this.API_ESTUDIANTES}/${id}`
+  deleteEstudiantes (estudiantes: any): Observable<any>{
+    this.API_ESTUDIANTES= `${this.API_ESTUDIANTES}/${estudiantes.id}`
     return this.http.delete(this.API_ESTUDIANTES);
   }
 }

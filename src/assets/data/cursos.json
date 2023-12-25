@@ -1,6 +1,22 @@
 {
   "cursos": [
     {
+      "id": 1,
+      "nombre": "Matematica",
+      "codigo": "Mat101",
+      "numEstudiantes": 40,
+      "aulaAsignada": "TM1",
+      "docente": "Janio Allauca"
+    },
+    {
+      "id": 2,
+      "nombre": "Fisica",
+      "codigo": "Fis101",
+      "numEstudiantes": "24",
+      "aulaAsignada": "TM11",
+      "docente": "Janio Allauca"
+    },
+    {
       "id": 3,
       "nombre": "Fisica",
       "codigo": "Fis101",
@@ -11,10 +27,10 @@
     {
       "nombre": "Base de Datos I",
       "codigo": "Bas101",
-      "numEstudiantes": "30",
+      "numEstudiantes": 30,
       "aulaAsignada": "BD12",
       "docente": "Christopher Pesántez",
-      "id": "4"
+      "id": 4
     }
   ]
 }

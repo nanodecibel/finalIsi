@@ -15,13 +15,19 @@
   <body>
     <br />
     <br />
+    <h1 class="title">Crear nueva Materia</h1>
     <div class="card-body">
-      <h2 class="title">Crear nueva Materia</h2>
-
       <form class="form">
         <div>
           <label class="form-label" for="id">ID Materia:</label>
-          <input type="number" id="id" name="id" #id required />
+          <input
+            type="number"
+            class="form-control"
+            id="id"
+            name="id"
+            #id
+            required
+          />
         </div>
         <div>
           <label class="form-label" for="nombre">Nombre de la Materia:</label>
@@ -49,6 +55,7 @@
           >
           <input
             type="number"
+            class="form-control"
             id="numEstudiantes"
             name="numEstudiantes"
             #numEstudiantes
@@ -57,6 +64,7 @@
         </div>
         <div>
           <label class="form-label" for="aulaAsignada">Aula Asignada:</label>
+<<<<<<< HEAD
           <select type="text" id="aulaAsignada" name="aulaAsignada" #aulaAsignada required>
             <option value ="TM-101">TM-101</option>
             <option value ="GR-200">GR-200</option>
@@ -67,6 +75,16 @@
 
         
           </select>
+=======
+          <input
+            type="text"
+            class="form-control"
+            id="aulaAsignada"
+            name="aulaAsignada"
+            #aulaAsignada
+            required
+          />
+>>>>>>> 650cd5d48b8776ac9e79766c88ab6abd63da3dec
         </div>
         <div>
           <label class="form-label" for="docente">Docentes:</label>
@@ -82,6 +100,7 @@
         <!-- Botón de envío del formulario -->
         <button
           type="submit"
+          class="btn btn-success"
           (click)="
             guardarCurso(
               id.value,
@@ -183,9 +202,7 @@
                 <td>004</td>
                 <td>Fanny</td>
                 <td>
-                  <button>Quitar
-                    
-                  </button>
+                  <button>Quitar</button>
                 </td>
               </tr>
             </tbody>
@@ -194,47 +211,49 @@
       </div>
       <br />
       <br />
-      <div>
-        <h2>Listado de materias disponibles</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>ID de la Materia</th>
-              <th>Nombre de la Materia</th>
-              <th>Código de la Materia</th>
-              <th>Número de Estudiantes</th>
-              <th>Aula Asignada</th>
-              <th>Docente</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let item of dataCursos">
-              <td>{{ item.id }}</td>
-              <td>{{ item.nombre }}</td>
-              <td>{{ item.codigo }}</td>
-              <td>{{ item.numEstudiantes }}</td>
-              <td>{{ item.aulaAsignada }}</td>
-              <td>{{ item.docente }}</td>
-              <td>
-                <button
-                  class="btn btn-outline-success"
-                  (click)="editarCurso(item)"
-                >
-                  Editar
-                </button>
+      <div class="row">
+        <div>
+          <h2>Listado de materias disponibles</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>ID de la Materia</th>
+                <th>Nombre de la Materia</th>
+                <th>Código de la Materia</th>
+                <th>Número de Estudiantes</th>
+                <th>Aula Asignada</th>
+                <th>Docente</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of dataCursos">
+                <td>{{ item.id }}</td>
+                <td>{{ item.nombre }}</td>
+                <td>{{ item.codigo }}</td>
+                <td>{{ item.numEstudiantes }}</td>
+                <td>{{ item.aulaAsignada }}</td>
+                <td>{{ item.docente }}</td>
+                <td>
+                  <button
+                    class="btn btn-outline-success"
+                    (click)="editarCurso(item)"
+                  >
+                    Editar
+                  </button>
 
-                <button
-                  type="submit"
-                  class="btn btn-danger"
-                  (click)="eliminarCurso(item)"
-                >
-                  Eliminar
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+                  <button
+                    type="submit"
+                    class="btn btn-danger"
+                    (click)="eliminarCurso(item)"
+                  >
+                    Eliminar
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <div *ngIf="modoEdicion">
@@ -242,6 +261,7 @@
         <form (ngSubmit)="onSubmit()">
           <label>ID de la materia:</label>
           <input
+            class="form-control"
             [(ngModel)]="itemSeleccionado.id"
             name="id"
             required
@@ -249,6 +269,7 @@
 
           <label>Nombre de la materia:</label>
           <input
+            class="form-control"
             [(ngModel)]="itemSeleccionado.nombre"
             name="nombre"
             required
@@ -256,6 +277,7 @@
 
           <label>Código de la materia:</label>
           <input
+            class="form-control"
             [(ngModel)]="itemSeleccionado.codigo"
             name="codigo"
             required
@@ -263,6 +285,7 @@
 
           <label>Número de estudiantes:</label>
           <input
+            class="form-control"
             [(ngModel)]="itemSeleccionado.numEstudiantes"
             name="numEstudiantes"
             required
@@ -270,6 +293,7 @@
 
           <label>Aula asignada:</label>
           <input
+            class="form-control"
             [(ngModel)]="itemSeleccionado.aulaAsignada"
             name="aulaAsignada"
             required
@@ -288,8 +312,11 @@
             <option value="Carlos Hidalgo">Carlos Hidalgo</option>
           </select>
 
-          <button type="submit">Actualizar</button>
-          <button type="button" (click)="cancelar()">Cancelar</button>
+          <button type="submit" class="btn btn-success">Actualizar</button>
+
+          <button type="button" class="btn btn-primary" (click)="cancelar()">
+            Cancelar
+          </button>
         </form>
       </div>
     </div>

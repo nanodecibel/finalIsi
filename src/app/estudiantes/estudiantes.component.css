@@ -20,14 +20,15 @@ label{
   margin-bottom: 3px;
   padding: 5px;
   text-justify: auto;
+  font-weight: bold;
 }
 
 input.email {
   margin-left: 11px;
 }
 
-button{
-  margin-left: 10px;
+button {
+  margin: 10px 4px;
 }
 
 
