@@ -3,34 +3,42 @@
     {
       "id": 1,
       "nombre": "Matematica",
-      "codigo": "Mat101",
+      "codigo": "Mat-101",
       "numEstudiantes": 40,
-      "aulaAsignada": "TM1",
+      "aulaAsignada": "TM-101",
       "docente": "Janio Allauca"
     },
     {
       "id": 2,
-      "nombre": "Fisica",
-      "codigo": "Fis101",
+      "nombre": "Mecánica",
+      "codigo": "Mec-110",
       "numEstudiantes": "24",
-      "aulaAsignada": "TM11",
-      "docente": "Janio Allauca"
+      "aulaAsignada": "DS-200",
+      "docente": "Carlos Hidalgo"
     },
     {
       "id": 3,
-      "nombre": "Fisica",
-      "codigo": "Fis101",
-      "numEstudiantes": 40,
-      "aulaAsignada": "TM11",
-      "docente": "Junior Campos"
+      "nombre": "Software",
+      "codigo": "Sof-104",
+      "numEstudiantes": "35",
+      "aulaAsignada": "FC-300",
+      "docente": "Valeria Fernández"
     },
     {
-      "nombre": "Base de Datos I",
-      "codigo": "Bas101",
+      "nombre": "Cálculo",
+      "codigo": "Cal-220",
       "numEstudiantes": 30,
-      "aulaAsignada": "BD12",
+      "aulaAsignada": "CL-111",
       "docente": "Christopher Pesántez",
       "id": 4
+    },
+    {
+      "id": "5",
+      "nombre": "Acústica",
+      "codigo": "Acu-140",
+      "numEstudiantes": "10",
+      "aulaAsignada": "AC-212",
+      "docente": "Janio Allauca"
     }
   ]
 }

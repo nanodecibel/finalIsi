@@ -43,7 +43,7 @@
           <label class="form-label" for="codigo">Código de la Materia:</label>
           <select type="text" id="codigo" name="codigo" #codigo required >
             <option value="Mat-101">Mat-101</option>
-            <option value="Mec-110">Mec110</option>
+            <option value="Mec-110">Mec-110</option>
             <option value="Sof-104">Sof-104</option>
             <option value="Cal-220">Cal-220</option>
             <option value="Acu-140">Acu-140</option>
@@ -66,13 +66,10 @@
           <label class="form-label" for="aulaAsignada">Aula Asignada:</label>
           <select type="text" id="aulaAsignada" name="aulaAsignada" #aulaAsignada required>
             <option value ="TM-101">TM-101</option>
-            <option value ="GR-200">GR-200</option>
-            <option value ="GR-300">GR-300</option>
-            <option value ="TM-111">TM-111</option>
-
-
-
-        
+            <option value ="DS-200">DS-200</option>
+            <option value ="FC-300">FC-300</option>
+            <option value ="CL-111">CL-111</option>
+            <option value ="AC-212">AC-212</option>
           </select>
         </div>
         <div>
@@ -257,20 +254,26 @@
           />
 
           <label>Nombre de la materia:</label>
-          <input
-            class="form-control"
-            [(ngModel)]="itemSeleccionado.nombre"
-            name="nombre"
-            required
-          />
+          <select [(ngModel)]="itemSeleccionado.nombre"
+          name="nombre"
+          required>
+            <option value="Matematica">Matematica</option>
+            <option value="Mecánica">Mecánica</option>
+            <option value="Software">Software</option>
+            <option value="Cálculo">Cálculo</option>
+            <option value="Acústica">Acústica</option>
+          </select>
 
           <label>Código de la materia:</label>
-          <input
-            class="form-control"
-            [(ngModel)]="itemSeleccionado.codigo"
-            name="codigo"
-            required
-          />
+          <select [(ngModel)]="itemSeleccionado.codigo"
+          name="codigo"
+          required>
+            <option value="Mat-101">Mat-101</option>
+            <option value="Mec-110">Mec-110</option>
+            <option value="Sof-104">Sof-104</option>
+            <option value="Cal-220">Cal-220</option>
+            <option value="Acu-140">Acu-140</option>
+          </select>
 
           <label>Número de estudiantes:</label>
           <input
@@ -281,12 +284,15 @@
           />
 
           <label>Aula asignada:</label>
-          <input
-            class="form-control"
-            [(ngModel)]="itemSeleccionado.aulaAsignada"
-            name="aulaAsignada"
-            required
-          />
+          <select [(ngModel)]="itemSeleccionado.aulaAsignada"
+          name="aulaAsignada"
+          required>
+          <option value ="TM-101">TM-101</option>
+          <option value ="DS-200">DS-200</option>
+          <option value ="FC-300">FC-300</option>
+          <option value ="CL-111">CL-111</option>
+          <option value ="AC-212">AC-212</option>
+          </select>
 
           <label>Docente:</label>
           <select
