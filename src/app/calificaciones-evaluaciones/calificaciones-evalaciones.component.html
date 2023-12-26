@@ -20,7 +20,7 @@
       <h2 class="title">Registro de Calificaciones</h2>
       <form class="form">
         <div>
-          <label for="id" class="form-label">Id:</label>
+          <label for="id" class="form-label">ID:</label>
           <input type="number" id="id" name="id" #id required />
         </div>
         <div>
@@ -31,14 +31,14 @@
           <label class="form-label" for="codigo">Código de la Materia:</label>
           <select type="text" id="codigo" name="codigo" #codigo required >
             <option value="Mat-101">Mat-101</option>
-            <option value="Mec-110">Mec110</option>
+            <option value="Mec-110">Mec-110</option>
             <option value="Sof-104">Sof-104</option>
             <option value="Cal-220">Cal-220</option>
             <option value="Acu-140">Acu-140</option>
           </select>
         </div>
         <div>
-          <label for="calificacion" class="form-label">Calificacion:</label>
+          <label for="calificacion" class="form-label">Calificación:</label>
           <input
             type="number"
             id="calificacion"
@@ -59,8 +59,8 @@
           <thead>
             <tr>
               <th>Id estudiante</th>
-              <th>Nombre</th>
-              <th> Codigo Materia</th>
+              <th>Nombre Estudiante</th>
+              <th>Código Materia</th>
               <th>Calificación</th>
               <th>Acciones</th>
             </tr>
@@ -74,13 +74,13 @@
               <td>
                 <button
                   class="btn btn-outline-success"
-                  (click)="editarCalificacion(id)"
+                  (click)="editarCalificacion(item)"
                 >Editar</button>
 
                 <button
                   type="submit"
                   class="btn btn-danger"
-                  (click)="eliminarCalificacion(id)"
+                  (click)="eliminarCalificacion(item)"
                 >Eliminar</button>
               </td>
             </tr>
@@ -91,14 +91,22 @@
       <div *ngIf="modoEdicion">
         <h2>Editar Calificación</h2>
         <form (ngSubmit)="onSubmit()">
-          <label>Id:</label>
+          <label>ID:</label>
           <input [(ngModel)]="itemSeleccionado.id" name="id" required>
 
-          <label>Nombre:</label>
+          <label>Nombre Estudiante:</label>
           <input [(ngModel)]="itemSeleccionado.nombre" name="nombre" required>
 
-          <label>Materia:</label>
-          <input [(ngModel)]="itemSeleccionado.materia" name="codigo" required>
+          <label>Código de Materia:</label>
+          <select [(ngModel)]="itemSeleccionado.codigo"
+          name="codigo"
+          required>
+            <option value="Mat-101">Mat-101</option>
+            <option value="Mec-110">Mec-110</option>
+            <option value="Sof-104">Sof-104</option>
+            <option value="Cal-220">Cal-220</option>
+            <option value="Acu-140">Acu-140</option>
+          </select>
 
           <label>Calificación:</label>
           <input [(ngModel)]="itemSeleccionado.calificacion" name="calificacion" required>

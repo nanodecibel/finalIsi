@@ -22,11 +22,11 @@ export class CalificacionesEvalacionesComponent {
   }
 
   //MÉTODO POST ok
-  guardarCalificacion(id:any, nombre:any, materia:any, calificacion:any){
+  guardarCalificacion(id:any, nombre:any, codigo:any, calificacion:any){
     const temp ={
       "id":id,
       "nombre": nombre,
-      "materia": materia,
+      "codigo": codigo,
       "calificacion": calificacion
     }
     this.servicio.postCalificacion(temp).subscribe();

@@ -4,19 +4,35 @@
       "nombre": "Alex Perez",
       "materia": "Base de Datos I",
       "calificacion": "94",
-      "id": 1
+      "id": 1,
+      "codigo": "Mat-101"
     },
     {
       "nombre": "Pedro Sanchez",
       "materia": "Contabilidad II",
       "calificacion": "84",
-      "id": "2"
+      "id": 2,
+      "codigo": "Sof-104"
     },
     {
-      "id": "3",
+      "id": 3,
       "nombre": "Martin Chavez",
       "materia": "Mecánica",
-      "calificacion": "90"
+      "calificacion": "90",
+      "codigo": "Cal-220"
+    },
+    {
+      "id": "4",
+      "nombre": "Daniel Enríquez",
+      "materia": "Acu-140",
+      "calificacion": "100",
+      "codigo": "Acu-140"
+    },
+    {
+      "id": "5",
+      "nombre": "Andrea Pérez",
+      "codigo": "Mat-101",
+      "calificacion": "80"
     }
   ]
 }
