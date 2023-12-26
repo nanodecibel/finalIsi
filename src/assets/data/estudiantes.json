@@ -5,70 +5,80 @@
       "nombre": "Pedro",
       "apellido": "Álava",
       "email": "pedro.a@hotmail.com",
-      "telefono": "0982006718"
+      "telefono": "0982006718",
+      "codigo": "Mec-110"
     },
     {
       "id": 2,
       "nombre": "Maria",
       "apellido": "Herreha",
       "email": "m.herrera@hotmail.com",
-      "telefono": "0992737288"
+      "telefono": "0992737288",
+      "codigo": "Sof-104"
     },
     {
       "id": 3,
       "nombre": "José",
       "apellido": "Vela",
       "email": "jose.vela@hotmail.com",
-      "telefono": "0999736101"
+      "telefono": "0999736101",
+      "codigo": "Mec-110"
     },
     {
       "id": 4,
       "nombre": "Daniel",
       "apellido": "Enriquez",
       "email": "denriquez@gmail.com",
-      "telefono": "0982737172"
+      "telefono": "0982737172",
+      "codigo": "Acu-140"
     },
     {
       "id": 5,
       "nombre": "Andrea",
       "apellido": "Perez",
       "email": "aperez@hotmail.com",
-      "telefono": "02839848"
+      "telefono": "02839848",
+      "codigo": "Mat-101"
     },
     {
       "id": 6,
       "nombre": "Fernando",
       "apellido": "Riera",
       "email": "fer.riera88@hotmail.com",
-      "telefono": "0982736718"
+      "telefono": "0982736718",
+      "codigo": "Cal-220"
     },
     {
       "id": 7,
       "nombre": "Maria",
       "apellido": "Chavez",
       "email": "mchavez21@gmail.com",
-      "telefono": "0933892234"
+      "telefono": "0933892234",
+      "codigo": "Cal-220"
     },
     {
       "id": 8,
       "nombre": "José",
       "apellido": "Polo",
       "email": "j_polo@hotmail.com",
-      "telefono": "02839848"
+      "telefono": "02839848",
+      "codigo": "Sof-104"
     },
     {
       "id": 9,
       "nombre": "Sofia",
       "apellido": "Chavez",
       "email": "sofi34@gmail.com",
-      "telefono": "0929288299"
+      "telefono": "0929288299",
+      "codigo": "Acu-140"
     },
     {
       "id": "10",
       "nombre": "Nancy",
       "apellido": "Vivas",
       "email": "nancyv_r45@gmail.com",
-      "telefono": "0928283122"
+      "telefono": "0928283122",
+      "codigo": "Mat-101"
     }
   ]
 }

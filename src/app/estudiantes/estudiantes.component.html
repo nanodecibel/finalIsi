@@ -35,7 +35,7 @@
       </div>
       <div>
         <label class="form-label" for="codigo">Código de la Materia:</label>
-        <select type="text" id="codigo" name="codigo" #codigo required >
+        <select type="text" class="form-select" id="codigo" required #codigo>
           <option value="Mat-101">Mat-101</option>
           <option value="Mec-110">Mec-110</option>
           <option value="Sof-104">Sof-104</option>
@@ -103,7 +103,13 @@
           <input [(ngModel)]="itemSeleccionado.telefono" name="telefono" required>
 
           <label>Código Materia:</label>
-          <input [(ngModel)]="itemSeleccionado.codigo" name="codigo" required>
+          <select [(ngModel)]="itemSeleccionado.codigo" name="codigo" required >
+            <option value="Mat-101">Mat-101</option>
+            <option value="Mec-110">Mec-110</option>
+            <option value="Sof-104">Sof-104</option>
+            <option value="Cal-220">Cal-220</option>
+            <option value="Acu-140">Acu-140</option>
+          </select>
 
           <button class="btn btn-success" type="submit">Guardar</button>
           <button class="btn btn-primary" type="button" (click)="cancelar()">Cancelar</button>
