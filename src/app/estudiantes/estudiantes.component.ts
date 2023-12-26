@@ -13,11 +13,8 @@ export class EstudiantesComponent {
   constructor(private servicio: EstudianteService) { }
 
   estudiantes: any = [];
-
   itemSeleccionado: any = {};
   modoEdicion: boolean = false;
-
-
 
 
   //MÉTODO GET
@@ -28,14 +25,15 @@ export class EstudiantesComponent {
   }
 
   //MÉTODO POST
-  guardarEstudiante(id: any, nombre: any, apellido: any, email: any, telefono: any) {
+  guardarEstudiante(id: any, nombre: any, apellido: any, email: any, telefono: any, codigo: any) {
 
     const temp = {
       "id": id,
       "nombre": nombre,
       "apellido": apellido,
       "email": email,
-      "telefono": telefono
+      "telefono": telefono,
+      "codigo": codigo
     }
     this.servicio.postEstudiantes(temp).subscribe();
     location.reload()

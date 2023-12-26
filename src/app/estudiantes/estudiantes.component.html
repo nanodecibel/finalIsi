@@ -37,13 +37,13 @@
         <label class="form-label" for="codigo">Código de la Materia:</label>
         <select type="text" id="codigo" name="codigo" #codigo required >
           <option value="Mat-101">Mat-101</option>
-          <option value="Mec-110">Mec110</option>
+          <option value="Mec-110">Mec-110</option>
           <option value="Sof-104">Sof-104</option>
           <option value="Cal-220">Cal-220</option>
           <option value="Acu-140">Acu-140</option>
         </select>
       </div>
-      <button type="submit" class="btn btn-info" (click)="guardarEstudiante(id.value, nombre.value, apellido.value, email.value, telefono.value)">Registrar</button>
+      <button type="submit" class="btn btn-info" (click)="guardarEstudiante(id.value, nombre.value, apellido.value, email.value, telefono.value, codigo.value)">Registrar</button>
     </form>
   </div>
 <br>
@@ -59,7 +59,7 @@
             <th>Apellido</th>
             <th>Email</th>
             <th>Teléfono</th>
-            <th>Codigo Materia</th>
+            <th>Código Materia</th>
             <th>Acciones</th>
           </tr>
         </thead>
@@ -72,7 +72,8 @@
             <td>{{item.telefono}}</td>
             <td>{{item.codigo}}</td>
             <td>
-              <button class="btn btn-outline-success" (click)="editarEstudiante(id)">Editar</button>
+              <button class="btn btn-outline-success" (click)="editarEstudiante(item)">Editar</button>
+              <button class="btn btn-outline-danger" (click)="eliminarEstudiante(item)">Eliminar</button>
             </td>
           </tr>
         </tbody>
@@ -81,18 +82,6 @@
   </div>
 
       <br>
-
-      <div>
-        <h2>Eliminar estudiante</h2>
-        <form>
-          <div class="mb-3 mt-3">
-            <label for="id" class="form-label">Ingrese el ID del estudiante a eliminar:</label>
-            <input type="number" class="form-control" id="id" #id>
-          </div>
-          <button type="submit" class="btn btn-danger" (click)="eliminarEstudiante(id.value)">Eliminar</button>
-        </form>
-      </div>
-
       <br>
 
       <div *ngIf="modoEdicion">
@@ -112,6 +101,9 @@
 
           <label>Teléfono:</label>
           <input [(ngModel)]="itemSeleccionado.telefono" name="telefono" required>
+
+          <label>Código Materia:</label>
+          <input [(ngModel)]="itemSeleccionado.codigo" name="codigo" required>
 
           <button class="btn btn-success" type="submit">Guardar</button>
           <button class="btn btn-primary" type="button" (click)="cancelar()">Cancelar</button>
