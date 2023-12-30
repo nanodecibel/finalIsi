@@ -31,14 +31,6 @@
       "aulaAsignada": "CL-111",
       "docente": "Christopher Pesántez",
       "id": 4
-    },
-    {
-      "id": "5",
-      "nombre": "Acústica",
-      "codigo": "Acu-140",
-      "numEstudiantes": "10",
-      "aulaAsignada": "AC-212",
-      "docente": "Janio Allauca"
     }
   ]
 }
